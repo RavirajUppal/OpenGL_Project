@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/raviraj_uppal/Projects/OpenGL/app'
+relocations:     []
+...
