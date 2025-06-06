@@ -4,7 +4,7 @@ layout (location = 1) in vec3 aColor;
 layout (location = 2) in vec2 aTex;
 
 out vec3 color;
-out vec3 texCoord;
+out vec2 texCoord;
 
 uniform float scale;
 
