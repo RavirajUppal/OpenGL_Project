@@ -1,15 +1,23 @@
 #include<iostream>
 #include<glad/glad.h>
 #include<GLFW/glfw3.h>
+#include<stb/stb_image.h>
+#include<glm/glm.hpp>
+#include<glm/gtc/matrix_transform.hpp>
+#include<glm/gtc/type_ptr.hpp>
+#include <glm/gtx/string_cast.hpp>
 
 #include"ShaderClass.h"
 #include"VBO.h"
 #include"VAO.h"
 #include"EBO.h"
+#include"Texture.h"
 
-#include<stb/stb_image.h>
 
-
+void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
+    std::cout << "Framebuffer resized: " << width << "x" << height << "\n";
+    glViewport(0, 0, width, height);
+}
 
 int main() 
 {
@@ -51,10 +59,13 @@ int main()
 	}
 
 	glfwMakeContextCurrent(window);
+	// glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
 	gladLoadGL();
 
-	glViewport(0, 0, 800, 800);
+	int framebufferWidth, framebufferHeight;
+	glfwGetFramebufferSize(window, &framebufferWidth, &framebufferHeight);
+	glViewport(0, 0, framebufferWidth, framebufferHeight);
 
 	Shader shaderProgram("default.vert", "default.frag");
 
@@ -76,25 +87,7 @@ int main()
 
 	GLuint uniId = glGetUniformLocation(shaderProgram.ID, "scale");
 
-	int WidthImg, HeightImg, ColCh;
-	unsigned char* bytes = stbi_load("flower.png", &WidthImg, &HeightImg, &ColCh, 0);
-	
-	GLuint texture;
-	glGenTextures(1, &texture);
-	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, texture);
-
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, WidthImg, HeightImg, 0, GL_RGBA, GL_UNSIGNED_BYTE, bytes);
-	glGenerateMipmap(GL_TEXTURE_2D);
-
-	stbi_image_free(bytes);
-	glBindTexture(GL_TEXTURE_2D, 0);
+	Texture texture("flower.png", GL_TEXTURE_2D, GL_TEXTURE0, GL_RGBA, GL_UNSIGNED_BYTE);
 
 	GLuint uniTex0 = glGetUniformLocation(shaderProgram.ID, "tex0");
 	shaderProgram.Activate();
@@ -109,8 +102,31 @@ int main()
 		glClearColor(0.11f, 0.13f, 0.14f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 		shaderProgram.Activate();
+
+		glm::mat4 model = glm::mat4(1.0f);
+		glm::mat4 view = glm::mat4(1.0f);
+		glm::mat4 projection = glm::mat4(1.0f);
+
+		view = glm::translate(view, glm::vec3(0.0f, 0.0f, -20.0f));
+		projection = glm::perspective(glm::radians(45.0f), (float)(framebufferWidth/framebufferHeight), 0.1f, 100.0f);
+
+		GLint modelLoc = glGetUniformLocation(shaderProgram.ID, "model");
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		std::cout << "modelLoc: " << modelLoc << std::endl;
+		std::cout << "model: " << glm::to_string(model) << std::endl;
+
+		GLint viewLoc = glGetUniformLocation(shaderProgram.ID, "view");
+		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
+		std::cout << "viewLoc: " << viewLoc << std::endl;
+		std::cout << "view: " << glm::to_string(view) << std::endl;
+
+		GLint projectionLoc = glGetUniformLocation(shaderProgram.ID, "proj");
+		glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
+		std::cout << "projectionLoc: " << projectionLoc << std::endl;
+		std::cout << "projection: " << glm::to_string(projection) << std::endl;
+
 		glUniform1f(uniId, 0.0f);
-		glBindTexture(GL_TEXTURE_2D, texture);
+		texture.Bind();
 		VAO1.Bind();
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 		//glDrawArrays(GL_TRIANGLES, 0, 6);
@@ -123,6 +139,7 @@ int main()
 	//VBO2.Delete();
 	VAO1.Delete();
 	EBO1.Delete();
+	texture.Delete();
 	shaderProgram.Delete();
 
 	glfwDestroyWindow(window);
