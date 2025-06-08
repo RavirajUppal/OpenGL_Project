@@ -24,6 +24,13 @@ Texture::Texture(const char* image, GLenum texType, GLenum slot, GLenum format, 
 	glBindTexture(texType, 0);
 }
 
+void Texture::TexUnit(Shader& shaderProgram, int unit, const char* uniform)
+{
+	GLuint uniTex0 = glGetUniformLocation(shaderProgram.ID, uniform);
+	shaderProgram.Activate();
+	glUniform1i(uniTex0, unit);
+}
+
 void Texture::Bind()
 {
     glBindTexture(type, ID);
