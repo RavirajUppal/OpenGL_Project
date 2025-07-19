@@ -1,45 +1,37 @@
 {
-	"version": "2.0.0",
-	"tasks": [
-		{
-			"type": "cppbuild",
-			"label": "C/C++: clang++ build active file",
-			"command": "/usr/bin/clang++",
-			"args": [
-				"-std=c++17",
-				"-fdiagnostics-color=always",
-				"-Wall",
-				"-g",
-				"-I${workspaceFolder}/dependencies/include",
-				"-L${workspaceFolder}/dependencies/library",
-				"${workspaceFolder}/dependencies/library/libglfw.3.4.dylib",
-				"${workspaceFolder}/*.cpp",
-				"${workspaceFolder}/glad.c",
-				"-o",
-				"${workspaceFolder}/app",
-				"-framework",
-				"OpenGL",
-				"-framework",
-				"Cocoa",
-				"-framework",
-				"IOKit",
-				"-framework",
-				"CoreVideo",
-				"-framework",
-				"CoreFoundation",
-				"-Wno-deprecated"
-			],
-			"options": {
-				"cwd": "${fileDirname}"
-			},
-			"problemMatcher": [
-				"$gcc"
-			],
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			},
-			"detail": "compiler: /usr/bin/clang++"
-		}
-	]
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "CMake Configure",
+      "type": "shell",
+      "command": "cmake -S . -B build",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "detail": "Configure CMake project"
+    },
+    {
+      "label": "CMake Build",
+      "type": "shell",
+      "command": "cmake --build build",
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "problemMatcher": [],
+      "detail": "Build CMake project"
+    },
+    {
+      "label": "Run without build",
+      "type": "shell",
+      "command": "${workspaceFolder}/build/bin/OpenGLProject",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    }
+  ]
 }

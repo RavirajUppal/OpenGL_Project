@@ -1,16 +1,30 @@
 {
-    "configurations": [
-        {
-            "name": "Mac",
-            "includePath": [
-                "${workspaceFolder}/dependencies/include"
-            ],
-            "defines": [],
-            "compilerPath": "/usr/bin/clang",
-            "cStandard": "c17",
-            "cppStandard": "c++14",
-            "intelliSenseMode": "macos-clang-arm64"
-        }
-    ],
-    "version": 4
+  "configurations": [
+    {
+      "name": "Mac",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "${workspaceFolder}/headerFiles",
+        "${workspaceFolder}/libs/glad/include",
+        "${workspaceFolder}/libs",
+        "/opt/homebrew/include",                // GLFW and GLM from Homebrew
+        "/opt/homebrew/opt/glfw/include",       // Ensure GLFW headers are found
+        "/opt/homebrew/opt/glm/include"         // GLM if needed
+      ],
+      "defines": [
+        "SHADER_DIR=\"resources/Shaders/\"",
+        "TEXTURE_DIR=\"resources/Textures/\""
+        // "GLM_ENABLE_EXPERIMENTAL"               // To suppress GLM experimental errors
+      ],
+      "macFrameworkPath": [
+        "/System/Library/Frameworks",
+        "/Library/Frameworks"
+      ],
+      "compilerPath": "/usr/bin/clang++",
+      "cStandard": "c17",
+      "cppStandard": "c++17",
+      "intelliSenseMode": "macos-clang-arm64"   // Or "macos-clang-x64" depending on your Mac
+    }
+  ],
+  "version": 4
 }
