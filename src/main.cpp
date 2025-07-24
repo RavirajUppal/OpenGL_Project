@@ -14,6 +14,7 @@
 #include "Test.h"
 #include "TestMenu.h"
 #include "TestLight.h"
+#include "TestDynamicLight.h"
 
 
 // Vertex vertices[] =
@@ -146,6 +147,7 @@ int main()
 	currentTest = testMenu;
 
 	testMenu->Register<TestLight>("Lighting");
+	testMenu->Register<TestDynamicLight>("Dynamic Lighting");
 
 	glfwSetWindowUserPointer(window, &currentTest);
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
