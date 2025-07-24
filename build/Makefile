@@ -393,6 +393,30 @@ src/Mesh.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/Mesh.cpp.s
 .PHONY : src/Mesh.cpp.s
 
+src/Model.o: src/Model.cpp.o
+.PHONY : src/Model.o
+
+# target to build an object file
+src/Model.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/Model.cpp.o
+.PHONY : src/Model.cpp.o
+
+src/Model.i: src/Model.cpp.i
+.PHONY : src/Model.i
+
+# target to preprocess a source file
+src/Model.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/Model.cpp.i
+.PHONY : src/Model.cpp.i
+
+src/Model.s: src/Model.cpp.s
+.PHONY : src/Model.s
+
+# target to generate assembly for a file
+src/Model.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/Model.cpp.s
+.PHONY : src/Model.cpp.s
+
 src/ShaderClass.o: src/ShaderClass.cpp.o
 .PHONY : src/ShaderClass.o
 
@@ -488,6 +512,30 @@ src/TestMenu.s: src/TestMenu.cpp.s
 src/TestMenu.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/TestMenu.cpp.s
 .PHONY : src/TestMenu.cpp.s
+
+src/TestModel.o: src/TestModel.cpp.o
+.PHONY : src/TestModel.o
+
+# target to build an object file
+src/TestModel.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/TestModel.cpp.o
+.PHONY : src/TestModel.cpp.o
+
+src/TestModel.i: src/TestModel.cpp.i
+.PHONY : src/TestModel.i
+
+# target to preprocess a source file
+src/TestModel.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/TestModel.cpp.i
+.PHONY : src/TestModel.cpp.i
+
+src/TestModel.s: src/TestModel.cpp.s
+.PHONY : src/TestModel.s
+
+# target to generate assembly for a file
+src/TestModel.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/TestModel.cpp.s
+.PHONY : src/TestModel.cpp.s
 
 src/Texture.o: src/Texture.cpp.o
 .PHONY : src/Texture.o
@@ -651,6 +699,9 @@ help:
 	@echo "... src/Mesh.o"
 	@echo "... src/Mesh.i"
 	@echo "... src/Mesh.s"
+	@echo "... src/Model.o"
+	@echo "... src/Model.i"
+	@echo "... src/Model.s"
 	@echo "... src/ShaderClass.o"
 	@echo "... src/ShaderClass.i"
 	@echo "... src/ShaderClass.s"
@@ -663,6 +714,9 @@ help:
 	@echo "... src/TestMenu.o"
 	@echo "... src/TestMenu.i"
 	@echo "... src/TestMenu.s"
+	@echo "... src/TestModel.o"
+	@echo "... src/TestModel.i"
+	@echo "... src/TestModel.s"
 	@echo "... src/Texture.o"
 	@echo "... src/Texture.i"
 	@echo "... src/Texture.s"

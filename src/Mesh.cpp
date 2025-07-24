@@ -20,7 +20,7 @@ Mesh::Mesh(std::vector<Vertex>& vertices, std::vector<GLuint>& indices, std::vec
     EBO1.Unbind();
 }
 
-void Mesh::Draw(Shader &shader, Camera &camera)
+void Mesh::Draw(Shader& shader, Camera& camera)
 {
     shader.Activate();
     VAO.Bind();

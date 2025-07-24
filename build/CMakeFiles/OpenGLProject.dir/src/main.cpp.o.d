@@ -793,19 +793,29 @@ CMakeFiles/OpenGLProject.dir/src/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/stack.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/print \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/unistd.h \
-  /Users/raviraj_uppal/Projects/OpenGL/libs/stb/stb_image.h \
+  /Users/raviraj_uppal/Projects/OpenGL/libs/imgui/imgui.h \
+  /Users/raviraj_uppal/Projects/OpenGL/libs/imgui/imconfig.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/float.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/float.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/float.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/assert.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_assert.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_static_assert.h \
+  /Users/raviraj_uppal/Projects/OpenGL/libs/imgui/imgui_impl_glfw.h \
+  /Users/raviraj_uppal/Projects/OpenGL/libs/imgui/imgui_impl_opengl3.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/TargetConditionals.h \
+  /Users/raviraj_uppal/Projects/OpenGL/headerFiles/Test.h \
+  /Users/raviraj_uppal/Projects/OpenGL/headerFiles/Mesh.h \
+  /Users/raviraj_uppal/Projects/OpenGL/headerFiles/VAO.h \
+  /Users/raviraj_uppal/Projects/OpenGL/libs/glad/include/glad/glad.h \
+  /Users/raviraj_uppal/Projects/OpenGL/libs/glad/include/KHR/khrplatform.h \
+  /Users/raviraj_uppal/Projects/OpenGL/headerFiles/VBO.h \
   /opt/homebrew/include/glm/glm.hpp \
   /opt/homebrew/include/glm/detail/_fixes.hpp \
   /opt/homebrew/include/glm/detail/setup.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cassert \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/assert.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_assert.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_static_assert.h \
   /opt/homebrew/include/glm/detail/../simd/platform.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cfloat \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/float.h \
-  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/float.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/float.h \
   /opt/homebrew/include/glm/fwd.hpp \
   /opt/homebrew/include/glm/detail/qualifier.hpp \
   /opt/homebrew/include/glm/vec2.hpp \
@@ -982,6 +992,9 @@ CMakeFiles/OpenGLProject.dir/src/main.cpp.o: \
   /opt/homebrew/include/glm/vector_relational.hpp \
   /opt/homebrew/include/glm/integer.hpp \
   /opt/homebrew/include/glm/detail/func_integer.inl \
+  /Users/raviraj_uppal/Projects/OpenGL/headerFiles/EBO.h \
+  /Users/raviraj_uppal/Projects/OpenGL/headerFiles/Camera.h \
+  /opt/homebrew/include/GLFW/glfw3.h \
   /opt/homebrew/include/glm/gtc/matrix_transform.hpp \
   /opt/homebrew/include/glm/gtc/../mat4x4.hpp \
   /opt/homebrew/include/glm/gtc/../vec2.hpp \
@@ -1094,65 +1107,19 @@ CMakeFiles/OpenGLProject.dir/src/main.cpp.o: \
   /opt/homebrew/include/glm/gtc/../mat4x2.hpp \
   /opt/homebrew/include/glm/gtc/../mat4x3.hpp \
   /opt/homebrew/include/glm/gtc/type_ptr.inl \
-  /opt/homebrew/include/glm/gtx/string_cast.hpp \
-  /opt/homebrew/include/glm/gtx/../glm.hpp \
-  /opt/homebrew/include/glm/gtx/../gtc/type_precision.hpp \
-  /opt/homebrew/include/glm/gtx/../gtc/../gtc/quaternion.hpp \
-  /opt/homebrew/include/glm/gtx/../gtc/../gtc/vec1.hpp \
-  /opt/homebrew/include/glm/gtx/../gtc/../ext/vector_int1_sized.hpp \
-  /opt/homebrew/include/glm/gtx/../gtc/../ext/vector_int2_sized.hpp \
-  /opt/homebrew/include/glm/gtx/../gtc/../ext/vector_int3_sized.hpp \
-  /opt/homebrew/include/glm/gtx/../gtc/../ext/vector_int4_sized.hpp \
-  /opt/homebrew/include/glm/gtx/../gtc/../ext/scalar_int_sized.hpp \
-  /opt/homebrew/include/glm/gtx/../gtc/../ext/vector_uint1_sized.hpp \
-  /opt/homebrew/include/glm/gtx/../gtc/../ext/vector_uint2_sized.hpp \
-  /opt/homebrew/include/glm/gtx/../gtc/../ext/vector_uint3_sized.hpp \
-  /opt/homebrew/include/glm/gtx/../gtc/../ext/vector_uint4_sized.hpp \
-  /opt/homebrew/include/glm/gtx/../gtc/../ext/scalar_uint_sized.hpp \
-  /opt/homebrew/include/glm/gtx/../gtc/../detail/type_vec2.hpp \
-  /opt/homebrew/include/glm/gtx/../gtc/../detail/type_vec3.hpp \
-  /opt/homebrew/include/glm/gtx/../gtc/../detail/type_vec4.hpp \
-  /opt/homebrew/include/glm/gtx/../gtc/../detail/type_mat2x2.hpp \
-  /opt/homebrew/include/glm/gtx/../gtc/../detail/type_mat2x3.hpp \
-  /opt/homebrew/include/glm/gtx/../gtc/../detail/type_mat2x4.hpp \
-  /opt/homebrew/include/glm/gtx/../gtc/../detail/type_mat3x2.hpp \
-  /opt/homebrew/include/glm/gtx/../gtc/../detail/type_mat3x3.hpp \
-  /opt/homebrew/include/glm/gtx/../gtc/../detail/type_mat3x4.hpp \
-  /opt/homebrew/include/glm/gtx/../gtc/../detail/type_mat4x2.hpp \
-  /opt/homebrew/include/glm/gtx/../gtc/../detail/type_mat4x3.hpp \
-  /opt/homebrew/include/glm/gtx/../gtc/../detail/type_mat4x4.hpp \
-  /opt/homebrew/include/glm/gtx/../gtc/type_precision.inl \
-  /opt/homebrew/include/glm/gtx/../gtc/quaternion.hpp \
-  /opt/homebrew/include/glm/gtx/../gtx/dual_quaternion.hpp \
-  /opt/homebrew/include/glm/gtx/../gtx/../glm.hpp \
-  /opt/homebrew/include/glm/gtx/../gtx/../gtc/constants.hpp \
-  /opt/homebrew/include/glm/gtx/../gtx/../gtc/quaternion.hpp \
-  /opt/homebrew/include/glm/gtx/../gtx/dual_quaternion.inl \
-  /opt/homebrew/include/glm/gtx/../gtx/../geometric.hpp \
-  /opt/homebrew/include/glm/gtx/string_cast.inl \
-  /Users/raviraj_uppal/Projects/OpenGL/libs/imgui/imgui.h \
-  /Users/raviraj_uppal/Projects/OpenGL/libs/imgui/imconfig.h \
-  /Users/raviraj_uppal/Projects/OpenGL/libs/imgui/imgui_impl_glfw.h \
-  /Users/raviraj_uppal/Projects/OpenGL/libs/imgui/imgui_impl_opengl3.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/TargetConditionals.h \
-  /Users/raviraj_uppal/Projects/OpenGL/headerFiles/Test.h \
-  /Users/raviraj_uppal/Projects/OpenGL/headerFiles/Mesh.h \
-  /Users/raviraj_uppal/Projects/OpenGL/headerFiles/VAO.h \
-  /Users/raviraj_uppal/Projects/OpenGL/libs/glad/include/glad/glad.h \
-  /Users/raviraj_uppal/Projects/OpenGL/libs/glad/include/KHR/khrplatform.h \
-  /Users/raviraj_uppal/Projects/OpenGL/headerFiles/VBO.h \
-  /Users/raviraj_uppal/Projects/OpenGL/headerFiles/EBO.h \
-  /Users/raviraj_uppal/Projects/OpenGL/headerFiles/Camera.h \
-  /opt/homebrew/include/GLFW/glfw3.h \
   /opt/homebrew/include/glm/gtx/rotate_vector.hpp \
   /opt/homebrew/include/glm/gtx/../gtx/transform.hpp \
+  /opt/homebrew/include/glm/gtx/../gtx/../glm.hpp \
   /opt/homebrew/include/glm/gtx/../gtx/../gtc/matrix_transform.hpp \
   /opt/homebrew/include/glm/gtx/../gtx/transform.inl \
   /opt/homebrew/include/glm/gtx/../gtc/epsilon.hpp \
   /opt/homebrew/include/glm/gtx/../ext/vector_relational.hpp \
+  /opt/homebrew/include/glm/gtx/../glm.hpp \
   /opt/homebrew/include/glm/gtx/rotate_vector.inl \
   /opt/homebrew/include/glm/gtx/vector_angle.hpp \
   /opt/homebrew/include/glm/gtx/../gtx/quaternion.hpp \
+  /opt/homebrew/include/glm/gtx/../gtx/../gtc/constants.hpp \
+  /opt/homebrew/include/glm/gtx/../gtx/../gtc/quaternion.hpp \
   /opt/homebrew/include/glm/gtx/../gtx/../ext/quaternion_exponential.hpp \
   /opt/homebrew/include/glm/gtx/../gtx/../ext/../common.hpp \
   /opt/homebrew/include/glm/gtx/../gtx/../ext/../trigonometric.hpp \
@@ -1198,6 +1165,30 @@ CMakeFiles/OpenGLProject.dir/src/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/u8path.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/sstream \
   /Users/raviraj_uppal/Projects/OpenGL/headerFiles/Texture.h \
+  /Users/raviraj_uppal/Projects/OpenGL/libs/stb/stb_image.h \
   /Users/raviraj_uppal/Projects/OpenGL/headerFiles/TestMenu.h \
   /Users/raviraj_uppal/Projects/OpenGL/headerFiles/TestLight.h \
-  /Users/raviraj_uppal/Projects/OpenGL/headerFiles/TestDynamicLight.h
+  /Users/raviraj_uppal/Projects/OpenGL/headerFiles/TestDynamicLight.h \
+  /Users/raviraj_uppal/Projects/OpenGL/headerFiles/TestModel.h \
+  /Users/raviraj_uppal/Projects/OpenGL/headerFiles/Model.h \
+  /Users/raviraj_uppal/Projects/OpenGL/libs/json/json.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/numeric \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/accumulate.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/adjacent_difference.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/inner_product.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/iota.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/partial_sum.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/exclusive_scan.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/gcd_lcm.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/inclusive_scan.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/pstl.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/reduce.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/transform_exclusive_scan.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/transform_inclusive_scan.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/transform_reduce.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/execution \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_execution_policy.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/forward_list \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/map \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/valarray

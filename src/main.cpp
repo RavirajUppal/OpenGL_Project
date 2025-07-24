@@ -1,12 +1,12 @@
 #include <iostream>
 // #include <glad/glad.h>
 // #include <GLFW/glfw3.h>
-#include <stb/stb_image.h>
-#define GLM_ENABLE_EXPERIMENTAL
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtc/type_ptr.hpp>
-#include <glm/gtx/string_cast.hpp>
+// #include <stb/stb_image.h>
+// #define GLM_ENABLE_EXPERIMENTAL
+// #include <glm/glm.hpp>
+// #include <glm/gtc/matrix_transform.hpp>
+// #include <glm/gtc/type_ptr.hpp>
+// #include <glm/gtx/string_cast.hpp>
 #include "imgui/imgui.h"
 #include "imgui/imgui_impl_glfw.h"
 #include "imgui/imgui_impl_opengl3.h"
@@ -15,6 +15,7 @@
 #include "TestMenu.h"
 #include "TestLight.h"
 #include "TestDynamicLight.h"
+#include "TestModel.h"
 
 
 // Vertex vertices[] =
@@ -148,6 +149,8 @@ int main()
 
 	testMenu->Register<TestLight>("Lighting");
 	testMenu->Register<TestDynamicLight>("Dynamic Lighting");
+	testMenu->Register<TestModel>("Model");
+
 
 	glfwSetWindowUserPointer(window, &currentTest);
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
