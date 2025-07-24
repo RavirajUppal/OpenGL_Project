@@ -417,6 +417,30 @@ src/ShaderClass.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/ShaderClass.cpp.s
 .PHONY : src/ShaderClass.cpp.s
 
+src/TestDynamicLight.o: src/TestDynamicLight.cpp.o
+.PHONY : src/TestDynamicLight.o
+
+# target to build an object file
+src/TestDynamicLight.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/TestDynamicLight.cpp.o
+.PHONY : src/TestDynamicLight.cpp.o
+
+src/TestDynamicLight.i: src/TestDynamicLight.cpp.i
+.PHONY : src/TestDynamicLight.i
+
+# target to preprocess a source file
+src/TestDynamicLight.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/TestDynamicLight.cpp.i
+.PHONY : src/TestDynamicLight.cpp.i
+
+src/TestDynamicLight.s: src/TestDynamicLight.cpp.s
+.PHONY : src/TestDynamicLight.s
+
+# target to generate assembly for a file
+src/TestDynamicLight.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/TestDynamicLight.cpp.s
+.PHONY : src/TestDynamicLight.cpp.s
+
 src/TestLight.o: src/TestLight.cpp.o
 .PHONY : src/TestLight.o
 
@@ -630,6 +654,9 @@ help:
 	@echo "... src/ShaderClass.o"
 	@echo "... src/ShaderClass.i"
 	@echo "... src/ShaderClass.s"
+	@echo "... src/TestDynamicLight.o"
+	@echo "... src/TestDynamicLight.i"
+	@echo "... src/TestDynamicLight.s"
 	@echo "... src/TestLight.o"
 	@echo "... src/TestLight.i"
 	@echo "... src/TestLight.s"

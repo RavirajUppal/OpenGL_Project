@@ -41,8 +41,8 @@ TestLight::TestLight(GLFWwindow *window) : Test(window), m_Window(window)
             1, 4, 0};
 
     Texture textures[] = {
-        Texture(TEXTURE_DIR "planks.png", "diffuse", 0, GL_RGBA, GL_UNSIGNED_BYTE),
-        Texture(TEXTURE_DIR "planksSpec.png", "specular", 1, GL_RED, GL_UNSIGNED_BYTE)};
+        Texture(TEXTURE_DIR "planks.png", "diffuse", 0),
+        Texture(TEXTURE_DIR "planksSpec.png", "specular", 1)};
 
 	glfwGetFramebufferSize(window, &m_FramebufferWidth, &m_FramebufferHeight);
 	glViewport(0, 0, m_FramebufferWidth, m_FramebufferHeight);

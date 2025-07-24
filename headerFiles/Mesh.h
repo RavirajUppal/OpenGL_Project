@@ -15,7 +15,7 @@ public:
 
     VAO VAO;
 
-    Mesh(std::vector<Vertex> vertices, std::vector<GLuint> indices, std::vector<Texture> textures);
+    Mesh(std::vector<Vertex>& vertices, std::vector<GLuint>& indices, std::vector<Texture>& textures);
     void TexSlot(Shader &shader);
     void Draw(Shader &shader, Camera &camera);
 };

@@ -11,9 +11,9 @@ class Texture
         GLuint ID;
         const char* type;
         GLuint slot;
-        Texture(const char* imagePath, const char* texType, GLuint slot, GLenum format, GLenum pixelType);
+        Texture(const char* imagePath, const char* texType, GLuint slot);
 
-        void TexSlot(Shader& shaderProgram, const char* uniform);
+        void TexSlot(Shader& shaderProgram, const char* uniform, GLuint unit);
         void Bind();
         void UnBind();
         void Delete();

@@ -7,7 +7,7 @@ VAO::VAO()
 
 VAO::~VAO()
 {
-	Delete();
+	// Delete();
 }
 
 void VAO::LinkAttrib(VBO& VBO, GLuint layout, GLuint count, GLenum type, GLsizeiptr size, void* offset)

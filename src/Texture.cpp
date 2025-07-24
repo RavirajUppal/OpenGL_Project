@@ -1,10 +1,10 @@
 #include"Texture.h"
 
-Texture::Texture(const char* imagePath, const char* type, GLuint slot, GLenum format, GLenum pixelType) : type(type), slot(slot)
+Texture::Texture(const char* imagePath, const char* type, GLuint slot) : type(type), slot(slot)
 {
-    int WidthImg, HeightImg, ColCh;
+    int widthImg, heightImg, numColCh;
     stbi_set_flip_vertically_on_load(true);
-    unsigned char* bytes = stbi_load(imagePath, &WidthImg, &HeightImg, &ColCh, 0);
+    unsigned char* bytes = stbi_load(imagePath, &widthImg, &heightImg, &numColCh, 0);
 
     glGenTextures(1, &ID);
 	glActiveTexture(GL_TEXTURE0 + slot);
@@ -16,18 +16,58 @@ Texture::Texture(const char* imagePath, const char* type, GLuint slot, GLenum fo
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, WidthImg, HeightImg, 0, format, pixelType, bytes);
-	glGenerateMipmap(GL_TEXTURE_2D);
+	if (numColCh == 4)
+		glTexImage2D
+		(
+			GL_TEXTURE_2D,
+			0,
+			GL_RGBA,
+			widthImg,
+			heightImg,
+			0,
+			GL_RGBA,
+			GL_UNSIGNED_BYTE,
+			bytes
+		);
+	else if (numColCh == 3)
+		glTexImage2D
+		(
+			GL_TEXTURE_2D,
+			0,
+			GL_RGBA,
+			widthImg,
+			heightImg,
+			0,
+			GL_RGB,
+			GL_UNSIGNED_BYTE,
+			bytes
+		);
+	else if (numColCh == 1)
+		glTexImage2D
+		(
+			GL_TEXTURE_2D,
+			0,
+			GL_RGBA,
+			widthImg,
+			heightImg,
+			0,
+			GL_RED,
+			GL_UNSIGNED_BYTE,
+			bytes
+		);
+	else
+		throw std::invalid_argument("Automatic Texture type recognition failed");
 
+	glGenerateMipmap(GL_TEXTURE_2D);
 	stbi_image_free(bytes);
 	glBindTexture(GL_TEXTURE_2D, 0);
 }
 
-void Texture::TexSlot(Shader& shaderProgram, const char* uniform)
+void Texture::TexSlot(Shader& shaderProgram, const char* uniform, GLuint unit)
 {
 	GLuint uniTex0 = glGetUniformLocation(shaderProgram.ID, uniform);
 	shaderProgram.Activate();
-	glUniform1i(uniTex0, slot);
+	glUniform1i(uniTex0, unit);
 }
 
 void Texture::Bind()

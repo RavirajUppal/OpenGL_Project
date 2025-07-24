@@ -2,7 +2,7 @@
 #include <glm/glm.hpp>
 
 
-VBO::VBO(std::vector<Vertex> vertices)
+VBO::VBO(std::vector<Vertex>& vertices)
 {
 	glGenBuffers(1, &ID);
 	glBindBuffer(GL_ARRAY_BUFFER, ID);
@@ -11,7 +11,7 @@ VBO::VBO(std::vector<Vertex> vertices)
 
 VBO::~VBO()
 {
-	Delete();
+	// Delete();
 }
 
 void VBO::Bind()

@@ -20,6 +20,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/raviraj_uppal/Projects/OpenGL/src/EBO.cpp" "CMakeFiles/OpenGLProject.dir/src/EBO.cpp.o" "gcc" "CMakeFiles/OpenGLProject.dir/src/EBO.cpp.o.d"
   "/Users/raviraj_uppal/Projects/OpenGL/src/Mesh.cpp" "CMakeFiles/OpenGLProject.dir/src/Mesh.cpp.o" "gcc" "CMakeFiles/OpenGLProject.dir/src/Mesh.cpp.o.d"
   "/Users/raviraj_uppal/Projects/OpenGL/src/ShaderClass.cpp" "CMakeFiles/OpenGLProject.dir/src/ShaderClass.cpp.o" "gcc" "CMakeFiles/OpenGLProject.dir/src/ShaderClass.cpp.o.d"
+  "/Users/raviraj_uppal/Projects/OpenGL/src/TestDynamicLight.cpp" "CMakeFiles/OpenGLProject.dir/src/TestDynamicLight.cpp.o" "gcc" "CMakeFiles/OpenGLProject.dir/src/TestDynamicLight.cpp.o.d"
   "/Users/raviraj_uppal/Projects/OpenGL/src/TestLight.cpp" "CMakeFiles/OpenGLProject.dir/src/TestLight.cpp.o" "gcc" "CMakeFiles/OpenGLProject.dir/src/TestLight.cpp.o.d"
   "/Users/raviraj_uppal/Projects/OpenGL/src/TestMenu.cpp" "CMakeFiles/OpenGLProject.dir/src/TestMenu.cpp.o" "gcc" "CMakeFiles/OpenGLProject.dir/src/TestMenu.cpp.o.d"
   "/Users/raviraj_uppal/Projects/OpenGL/src/Texture.cpp" "CMakeFiles/OpenGLProject.dir/src/Texture.cpp.o" "gcc" "CMakeFiles/OpenGLProject.dir/src/Texture.cpp.o.d"
