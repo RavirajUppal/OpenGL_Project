@@ -25,5 +25,5 @@ void main()
 	texCoord = aTex;
 	
 	//gl_Position = vec4(aPos.x + aPos.x * scale, aPos.y + aPos.y * scale, aPos.z + aPos.z * scale, 1.0f);
-	gl_Position = cameraMatrix * model * vec4(currPos, 1.0f);
+	gl_Position = cameraMatrix * vec4(currPos, 1.0f);
 }
