@@ -89,7 +89,7 @@ TestDynamicLight::TestDynamicLight(GLFWwindow *window) : Test(window), m_Window(
 	glUniformMatrix4fv(glGetUniformLocation(m_FloorShader->ID, "rotation"), 1, GL_FALSE, glm::value_ptr( glm::mat4(1.0f)));
 	glUniformMatrix4fv(glGetUniformLocation(m_FloorShader->ID, "scale"), 1, GL_FALSE, glm::value_ptr( glm::mat4(1.0f)));
 
-	m_Camera = std::make_unique<Camera>(m_FramebufferHeight, m_FramebufferHeight, glm::vec3(0.0f, 0.0f, 3.0f));
+	m_Camera = std::make_unique<Camera>(m_FramebufferHeight, m_FramebufferHeight, glm::vec3(0.0f, 2.0f, 3.0f), glm::vec3(0.0f, -0.5f, -1.0f));
 }
 
 TestDynamicLight::~TestDynamicLight()

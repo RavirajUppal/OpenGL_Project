@@ -16,7 +16,7 @@ TestModel::TestModel(GLFWwindow *window) : Test(window), m_Window(window)
 	glUniform3f(glGetUniformLocation(m_ShaderProgram->ID, "lightPos"), lightPos.x, lightPos.y, lightPos.z);
 	glUniform1i(glGetUniformLocation(m_ShaderProgram->ID, "lightMode"), 2);
 
-	m_Camera = std::make_unique<Camera>(m_FramebufferHeight, m_FramebufferHeight, glm::vec3(0.0f, 0.0f, 30.0f));
+	m_Camera = std::make_unique<Camera>(m_FramebufferHeight, m_FramebufferHeight, glm::vec3(0.0f, 0.0f, 35.0f));
 
     // m_Model = std::make_unique<Model>("resources/Models/grindstone/scene.gltf");
     m_Model = std::make_unique<Model>("resources/Models/sword/scene.gltf");

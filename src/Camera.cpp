@@ -1,11 +1,12 @@
 #include "Camera.h"
 #include "imgui/imgui.h"
 
-Camera::Camera(int width, int height, glm::vec3 position)
+Camera::Camera(int width, int height, glm::vec3 position, glm::vec3 orientation)
 {
     this->width = width;
     this->height = height;
     this->position = position;
+    this->orientation = orientation;
 }
 
 void Camera::UpdateMatrix(float fovDeg, float nearPlane, float farPlane)
