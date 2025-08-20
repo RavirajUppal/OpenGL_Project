@@ -67,10 +67,6 @@ TestDynamicLight::TestDynamicLight(GLFWwindow *window) : Test(window), m_Window(
 	m_LightShader->Activate();
 	glUniformMatrix4fv(glGetUniformLocation(m_LightShader->ID, "model"), 1, GL_FALSE, glm::value_ptr(lightModel));
 	glUniform4f(glGetUniformLocation(m_LightShader->ID, "lightColor"), lightColor.x, lightColor.y, lightColor.z, lightColor.w);
-
-    glUniformMatrix4fv(glGetUniformLocation(m_LightShader->ID, "translation"), 1, GL_FALSE, glm::value_ptr( glm::mat4(1.0f)));
-	glUniformMatrix4fv(glGetUniformLocation(m_LightShader->ID, "rotation"), 1, GL_FALSE, glm::value_ptr( glm::mat4(1.0f)));
-	glUniformMatrix4fv(glGetUniformLocation(m_LightShader->ID, "scale"), 1, GL_FALSE, glm::value_ptr( glm::mat4(1.0f)));
     
 
     m_FloorShader = std::make_unique<Shader>(SHADER_DIR "default.vert", SHADER_DIR "default.frag");
