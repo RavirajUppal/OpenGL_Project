@@ -6,7 +6,6 @@ uniform mat4 cameraMatrix;
 
 void main()
 {
-	//gl_Position = vec4(aPos.x + aPos.x * scale, aPos.y + aPos.y * scale, aPos.z + aPos.z * scale, 1.0f);
 	gl_Position = cameraMatrix * model * vec4(aPos, 1.0f);
 }
 

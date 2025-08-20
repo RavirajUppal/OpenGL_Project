@@ -20,7 +20,7 @@ private:
     int m_FramebufferWidth, m_FramebufferHeight;
     std::unique_ptr<Model> m_Model;
     std::unique_ptr<Shader> m_ShaderProgram;
-    std::unique_ptr<Shader> m_LightShader;
+    std::unique_ptr<Shader> m_OutliningShader;
     std::unique_ptr<Camera> m_Camera;
     std::unique_ptr<Mesh> m_Light;
 };
