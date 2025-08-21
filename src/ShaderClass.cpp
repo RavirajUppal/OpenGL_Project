@@ -16,15 +16,24 @@ std::string get_file_contents(const char* filename)
 	throw std::runtime_error("Failed to open file: " + std::string(filename));
 }
 
-Shader::Shader(const char* vertexPath, const char* fragmentPath)
+Shader::Shader(const char* vertexPath, const char* fragmentPath, const char* geometryPath)
 {
 	std::string vertexCode;
     std::string fragmentCode;
+    std::string geometryCode;
+
+	std::string defineStr = "\n#define USE_GEOMETRY\n";
 
     try
     {
         vertexCode = get_file_contents(vertexPath);
         fragmentCode = get_file_contents(fragmentPath);
+		if (geometryPath != nullptr)
+		{
+        	geometryCode = get_file_contents(geometryPath);
+			size_t pos = vertexCode.find('\n');
+			vertexCode.insert(pos + 1, defineStr);
+		}
     }
     catch (const std::exception& e)
     {
@@ -37,14 +46,25 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath)
 	GLuint fragmentShader = CompileShader(GL_FRAGMENT_SHADER, fragmentCode.c_str());
 	compileErrors(fragmentShader, "FRAGMENT");
 
+	GLuint geometryShader = 0;
+	if (!geometryCode.empty())
+	{
+		geometryShader = CompileShader(GL_GEOMETRY_SHADER, geometryCode.c_str());
+		compileErrors(geometryShader, "GEOMETRY");
+	}
+
 	ID = glCreateProgram();
 	glAttachShader(ID, vertexShader);
 	glAttachShader(ID, fragmentShader);
+	if (geometryShader != 0)
+		glAttachShader(ID, geometryShader);
 	glLinkProgram(ID);
 	compileErrors(ID, "PROGRAM");
 
 	glDeleteShader(vertexShader);
 	glDeleteShader(fragmentShader);
+	if (geometryShader != 0)
+		glDeleteShader(geometryShader);
 }
 
 GLuint Shader::CompileShader(GLuint type, const char* source)

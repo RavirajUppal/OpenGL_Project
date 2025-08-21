@@ -12979,6 +12979,8 @@ CMakeFiles/OpenGLProject.dir/src/TestModel.cpp.o: /Users/raviraj_uppal/Projects/
   /Users/raviraj_uppal/Projects/OpenGL/headerFiles/VBO.h \
   /Users/raviraj_uppal/Projects/OpenGL/libs/glad/include/KHR/khrplatform.h \
   /Users/raviraj_uppal/Projects/OpenGL/libs/glad/include/glad/glad.h \
+  /Users/raviraj_uppal/Projects/OpenGL/libs/imgui/imconfig.h \
+  /Users/raviraj_uppal/Projects/OpenGL/libs/imgui/imgui.h \
   /Users/raviraj_uppal/Projects/OpenGL/libs/json/json.h \
   /Users/raviraj_uppal/Projects/OpenGL/libs/stb/stb_image.h \
   /opt/homebrew/include/GLFW/glfw3.h \

@@ -3,6 +3,7 @@
 
 #include "Test.h"
 #include "Model.h"
+#include "imgui/imgui.h"
 
 class TestModel : public Test
 {
@@ -23,6 +24,7 @@ private:
     std::unique_ptr<Shader> m_OutliningShader;
     std::unique_ptr<Camera> m_Camera;
     std::unique_ptr<Mesh> m_Light;
+    bool m_ShowOutline = false;
 };
 
 #endif

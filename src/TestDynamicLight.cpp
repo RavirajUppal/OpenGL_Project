@@ -69,7 +69,7 @@ TestDynamicLight::TestDynamicLight(GLFWwindow *window) : Test(window), m_Window(
 	glUniform4f(glGetUniformLocation(m_LightShader->ID, "lightColor"), lightColor.x, lightColor.y, lightColor.z, lightColor.w);
     
 
-    m_FloorShader = std::make_unique<Shader>(SHADER_DIR "default.vert", SHADER_DIR "default.frag");
+    m_FloorShader = std::make_unique<Shader>(SHADER_DIR "default.vert", SHADER_DIR "default.frag", SHADER_DIR "default.geom");
 	m_Floor = std::make_unique<Mesh>(verts, indi, tex);
 	// m_Floor->TexSlot(*m_FloorShader);
     glm::vec3 floorPos = glm::vec3(0.0f, -0.4f, 0.0f);

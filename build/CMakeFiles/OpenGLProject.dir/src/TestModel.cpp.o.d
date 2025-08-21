@@ -1183,4 +1183,6 @@ CMakeFiles/OpenGLProject.dir/src/TestModel.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/forward_list \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/map \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/valarray
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/valarray \
+  /Users/raviraj_uppal/Projects/OpenGL/libs/imgui/imgui.h \
+  /Users/raviraj_uppal/Projects/OpenGL/libs/imgui/imconfig.h
