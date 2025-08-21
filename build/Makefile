@@ -441,6 +441,30 @@ src/ShaderClass.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/ShaderClass.cpp.s
 .PHONY : src/ShaderClass.cpp.s
 
+src/TestCubeMap.o: src/TestCubeMap.cpp.o
+.PHONY : src/TestCubeMap.o
+
+# target to build an object file
+src/TestCubeMap.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/TestCubeMap.cpp.o
+.PHONY : src/TestCubeMap.cpp.o
+
+src/TestCubeMap.i: src/TestCubeMap.cpp.i
+.PHONY : src/TestCubeMap.i
+
+# target to preprocess a source file
+src/TestCubeMap.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/TestCubeMap.cpp.i
+.PHONY : src/TestCubeMap.cpp.i
+
+src/TestCubeMap.s: src/TestCubeMap.cpp.s
+.PHONY : src/TestCubeMap.s
+
+# target to generate assembly for a file
+src/TestCubeMap.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/TestCubeMap.cpp.s
+.PHONY : src/TestCubeMap.cpp.s
+
 src/TestDynamicLight.o: src/TestDynamicLight.cpp.o
 .PHONY : src/TestDynamicLight.o
 
@@ -705,6 +729,9 @@ help:
 	@echo "... src/ShaderClass.o"
 	@echo "... src/ShaderClass.i"
 	@echo "... src/ShaderClass.s"
+	@echo "... src/TestCubeMap.o"
+	@echo "... src/TestCubeMap.i"
+	@echo "... src/TestCubeMap.s"
 	@echo "... src/TestDynamicLight.o"
 	@echo "... src/TestDynamicLight.i"
 	@echo "... src/TestDynamicLight.s"

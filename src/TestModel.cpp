@@ -26,6 +26,9 @@ TestModel::TestModel(GLFWwindow *window) : Test(window), m_Window(window)
 
     // m_Model = std::make_unique<Model>("resources/Models/grindstone/scene.gltf");
     m_Model = std::make_unique<Model>("resources/Models/sword/scene.gltf");
+    // m_Model = std::make_unique<Model>("resources/Models/airplane/scene.gltf");
+    // m_Model = std::make_unique<Model>("resources/Models/statue/scene.gltf");
+    // m_Model = std::make_unique<Model>("resources/Models/crow/scene.gltf");
 }
 
 TestModel::~TestModel()
@@ -56,7 +59,7 @@ void TestModel::OnRender()
 
     m_Model->Draw(*m_OutliningShader, *m_Camera);
 	glStencilMask(0xFF);
-	glStencilFunc(GL_ALWAYS, 0, 0xFF);
+	glStencilFunc(GL_ALWAYS, 1, 0xFF);
     glEnable(GL_DEPTH_TEST); 
 }
 
@@ -66,4 +69,6 @@ void TestModel::OnImguiRender()
 
 void TestModel::OnWindowResize(GLFWwindow *window, int width, int height)
 {
+    Test::OnWindowResize(window, width, height);
+    m_Camera->OnWindowResize(width, height);
 }

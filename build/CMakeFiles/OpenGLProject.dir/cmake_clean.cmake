@@ -25,6 +25,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/OpenGLProject.dir/src/Model.cpp.o.d"
   "CMakeFiles/OpenGLProject.dir/src/ShaderClass.cpp.o"
   "CMakeFiles/OpenGLProject.dir/src/ShaderClass.cpp.o.d"
+  "CMakeFiles/OpenGLProject.dir/src/TestCubeMap.cpp.o"
+  "CMakeFiles/OpenGLProject.dir/src/TestCubeMap.cpp.o.d"
   "CMakeFiles/OpenGLProject.dir/src/TestDynamicLight.cpp.o"
   "CMakeFiles/OpenGLProject.dir/src/TestDynamicLight.cpp.o.d"
   "CMakeFiles/OpenGLProject.dir/src/TestLight.cpp.o"
