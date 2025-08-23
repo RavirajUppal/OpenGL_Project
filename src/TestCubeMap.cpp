@@ -48,14 +48,14 @@ TestCubeMap::TestCubeMap(GLFWwindow *window) : Test(window), m_Window(window)
     std::vector<Vertex> cubeVerts(cubeVertices, cubeVertices + sizeof(cubeVertices) / sizeof(Vertex));
 	std::vector<GLuint> cubeIndi(cubeIndices, cubeIndices + sizeof(cubeIndices) / sizeof(GLuint));
 
-    glfwGetFramebufferSize(window, &m_FramebufferWidth, &m_FramebufferHeight);
-	glViewport(0, 0, m_FramebufferWidth, m_FramebufferHeight);
+    glfwGetFramebufferSize(window, &FrameWidth, &FrameHeight);
+	glViewport(0, 0, FrameWidth, FrameHeight);
 
     m_SkyBoxShader = std::make_unique<Shader>(SHADER_DIR "skybox.vert", SHADER_DIR "skybox.frag");
     m_SkyBoxShader->Activate();
     glUniform1i(glGetUniformLocation(m_SkyBoxShader->ID, "cubeMap"), 0);
 
-	m_Camera = std::make_unique<Camera>(m_FramebufferHeight, m_FramebufferHeight, glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, -1.0f));
+	m_Camera = std::make_unique<Camera>(FrameHeight, FrameHeight, glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, -1.0f));
 
     m_SkyBoxVAO.Bind();
     VBO VBO(cubeVerts);
@@ -103,13 +103,25 @@ void TestCubeMap::OnUpdate(float deltaTime)
 
 void TestCubeMap::OnRender()
 {
+    if (m_PostProcessing)
+    {
+        Test::BindPostProcessingFrameBuffer();
+        DrawSkyBox();
+        Test::DrawPostProcessingOnScreen();
+        return;
+    }
+    DrawSkyBox();
+}
+
+void TestCubeMap::DrawSkyBox()
+{
     glDepthMask(GL_FALSE);
 
     m_SkyBoxShader->Activate();
     glm::mat4 view = glm::mat4(1.0f);
     glm::mat4 projection = glm::mat4(1.0f);
     view = glm::mat4(glm::mat3(glm::lookAt(m_Camera->position, m_Camera->position + m_Camera->orientation, m_Camera->up)));
-    projection = glm::perspective(glm::radians(60.0f), (float)m_FramebufferWidth / m_FramebufferHeight, 0.1f, 100.0f);
+    projection = glm::perspective(glm::radians(60.0f), (float)FrameWidth / FrameHeight, 0.1f, 100.0f);
     glUniformMatrix4fv(glGetUniformLocation(m_SkyBoxShader->ID, "view"), 1, GL_FALSE, glm::value_ptr(view));
     glUniformMatrix4fv(glGetUniformLocation(m_SkyBoxShader->ID, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
 
@@ -124,7 +136,7 @@ void TestCubeMap::OnRender()
 
 void TestCubeMap::OnImguiRender()
 {
-
+    Test::OnImguiRender();
 }
 
 void TestCubeMap::OnWindowResize(GLFWwindow *window, int width, int height)

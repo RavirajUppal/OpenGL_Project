@@ -3,7 +3,6 @@
 
 #include "Test.h"
 #include "Model.h"
-#include "imgui/imgui.h"
 
 class TestModel : public Test
 {
@@ -18,13 +17,14 @@ public:
 
 private:
     GLFWwindow *m_Window;
-    int m_FramebufferWidth, m_FramebufferHeight;
     std::unique_ptr<Model> m_Model;
     std::unique_ptr<Shader> m_ShaderProgram;
     std::unique_ptr<Shader> m_OutliningShader;
+    std::unique_ptr<Shader> m_NormalsShader;
     std::unique_ptr<Camera> m_Camera;
     std::unique_ptr<Mesh> m_Light;
     bool m_ShowOutline = false;
+    void DrawModel();
 };
 
 #endif

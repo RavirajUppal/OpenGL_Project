@@ -10,7 +10,7 @@ out vec2 texCoord;
 
 in DATA{
     vec3 currPos;
-    vec3 Normal;
+    vec3 normal;
     vec3 color;
     vec2 texCoord;
     mat4 projection;
@@ -25,21 +25,21 @@ void main()
 
     gl_Position = data_in[0].projection * (vec4(data_in[0].currPos, 1.0f));
     currPos = data_in[0].currPos;
-    normal = data_in[0].Normal;
+    normal = data_in[0].normal;
     color = data_in[0].color;
     texCoord = data_in[0].texCoord;
     EmitVertex();
 
     gl_Position = data_in[1].projection * (vec4(data_in[1].currPos, 1.0f));
     currPos = data_in[1].currPos;
-    normal = data_in[1].Normal;
+    normal = data_in[1].normal;
     color = data_in[1].color;
     texCoord = data_in[1].texCoord;
     EmitVertex();
 
     gl_Position = data_in[2].projection * (vec4(data_in[2].currPos, 1.0f));
     currPos = data_in[2].currPos;
-    normal = data_in[2].Normal;
+    normal = data_in[2].normal;
     color = data_in[2].color;
     texCoord = data_in[2].texCoord;
     EmitVertex();

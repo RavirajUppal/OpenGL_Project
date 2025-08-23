@@ -441,6 +441,30 @@ src/ShaderClass.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/ShaderClass.cpp.s
 .PHONY : src/ShaderClass.cpp.s
 
+src/Test.o: src/Test.cpp.o
+.PHONY : src/Test.o
+
+# target to build an object file
+src/Test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/Test.cpp.o
+.PHONY : src/Test.cpp.o
+
+src/Test.i: src/Test.cpp.i
+.PHONY : src/Test.i
+
+# target to preprocess a source file
+src/Test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/Test.cpp.i
+.PHONY : src/Test.cpp.i
+
+src/Test.s: src/Test.cpp.s
+.PHONY : src/Test.s
+
+# target to generate assembly for a file
+src/Test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/Test.cpp.s
+.PHONY : src/Test.cpp.s
+
 src/TestCubeMap.o: src/TestCubeMap.cpp.o
 .PHONY : src/TestCubeMap.o
 
@@ -729,6 +753,9 @@ help:
 	@echo "... src/ShaderClass.o"
 	@echo "... src/ShaderClass.i"
 	@echo "... src/ShaderClass.s"
+	@echo "... src/Test.o"
+	@echo "... src/Test.i"
+	@echo "... src/Test.s"
 	@echo "... src/TestCubeMap.o"
 	@echo "... src/TestCubeMap.i"
 	@echo "... src/TestCubeMap.s"

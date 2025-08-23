@@ -14,7 +14,7 @@ uniform mat4 scale;
 #ifdef USE_GEOMETRY
 out DATA {
 	vec3 currPos;
-    vec3 Normal;
+    vec3 normal;
     vec3 color;
     vec2 texCoord;
     mat4 projection;
@@ -38,7 +38,7 @@ void main()
 
 #ifdef USE_GEOMETRY
 	data_out.currPos = vec3(model * translation * rotation * scale * vec4(aPos, 1.0f));
-	data_out.Normal = aNormal;
+	data_out.normal = aNormal;
 	data_out.color = aColor;
 	data_out.texCoord = aTex;
 	data_out.projection = cameraMatrix;

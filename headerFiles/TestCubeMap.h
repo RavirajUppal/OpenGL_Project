@@ -18,10 +18,10 @@ private:
     GLFWwindow *m_Window;
     GLuint ID;
     int cubeMapWidth, cubeMapHeight;
-    int m_FramebufferWidth, m_FramebufferHeight;
     VAO m_SkyBoxVAO;
     std::unique_ptr<Shader> m_SkyBoxShader;
     std::unique_ptr<Camera> m_Camera;
+    void DrawSkyBox();
 };
 
 #endif

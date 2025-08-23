@@ -2,7 +2,6 @@
 #define TEST_DYNAMIC_LIGHT_CLASS_H
 
 #include "Test.h"
-#include "imgui/imgui.h"
 
 class TestDynamicLight : public Test
 {
@@ -17,13 +16,13 @@ public:
 
 private:
     GLFWwindow *m_Window;
-    int m_FramebufferWidth, m_FramebufferHeight;
     std::unique_ptr<Shader> m_FloorShader;
     std::unique_ptr<Shader> m_LightShader;
     std::unique_ptr<Camera> m_Camera;
     std::unique_ptr<Mesh> m_Floor;
     std::unique_ptr<Mesh> m_Light;
     float m_LightPos[3] = {0.5f, 0.5f, 0.5f};
+    void DrawScene();
 };
 
 #endif

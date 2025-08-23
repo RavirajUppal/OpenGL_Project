@@ -6,14 +6,15 @@ TestModel::TestModel(GLFWwindow *window) : Test(window), m_Window(window)
 	glEnable(GL_STENCIL_TEST);
 	glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);
 
-    glfwGetFramebufferSize(window, &m_FramebufferWidth, &m_FramebufferHeight);
-	glViewport(0, 0, m_FramebufferWidth, m_FramebufferHeight);
+    glfwGetFramebufferSize(window, &FrameWidth, &FrameHeight);
+	glViewport(0, 0, FrameWidth, FrameHeight);
 
 
     glm::vec4 lightColor = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
 	glm::vec3 lightPos = glm::vec3(0.0f, 0.5f, 0.5f);
 
     m_ShaderProgram = std::make_unique<Shader>(SHADER_DIR "default.vert", SHADER_DIR "default.frag", SHADER_DIR "default.geom");
+    m_NormalsShader = std::make_unique<Shader>(SHADER_DIR "default.vert", SHADER_DIR "normals.frag", SHADER_DIR "normals.geom");
 
 	m_ShaderProgram->Activate();
 	glUniform4f(glGetUniformLocation(m_ShaderProgram->ID, "lightColor"), lightColor.x, lightColor.y, lightColor.z, lightColor.w);
@@ -22,7 +23,7 @@ TestModel::TestModel(GLFWwindow *window) : Test(window), m_Window(window)
 
     m_OutliningShader = std::make_unique<Shader>(SHADER_DIR "outlining.vert", SHADER_DIR "outlining.frag");
 
-	m_Camera = std::make_unique<Camera>(m_FramebufferHeight, m_FramebufferHeight, glm::vec3(0.0f, 0.0f, 35.0f));
+	m_Camera = std::make_unique<Camera>(FrameHeight, FrameHeight, glm::vec3(0.0f, 0.0f, 35.0f));
 
     // m_Model = std::make_unique<Model>("resources/Models/grindstone/scene.gltf");
     m_Model = std::make_unique<Model>("resources/Models/sword/scene.gltf");
@@ -43,7 +44,14 @@ void TestModel::OnUpdate(float deltaTime)
 
 void TestModel::OnRender()
 {
-    if (m_ShowOutline)
+    if (m_PostProcessing)
+    {
+        m_ShowOutline = false;
+        Test::BindPostProcessingFrameBuffer();
+        DrawModel();
+        Test::DrawPostProcessingOnScreen();
+    }
+    else if (m_ShowOutline)
     {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT); 
         glStencilFunc(GL_ALWAYS, 1, 0xFF); 
@@ -64,12 +72,21 @@ void TestModel::OnRender()
         glEnable(GL_DEPTH_TEST); 
     }
     else
-        m_Model->Draw(*m_ShaderProgram, *m_Camera);
+    {
+        DrawModel();
+    }
+}
+
+void TestModel::DrawModel()
+{
+    m_Model->Draw(*m_ShaderProgram, *m_Camera);
+    m_Model->Draw(*m_NormalsShader, *m_Camera);
 }
 
 void TestModel::OnImguiRender()
 {
-    ImGui::Checkbox("Outline", &m_ShowOutline); 
+    ImGui::Checkbox("Outline", &m_ShowOutline);
+    Test::OnImguiRender();
 }
 
 void TestModel::OnWindowResize(GLFWwindow *window, int width, int height)

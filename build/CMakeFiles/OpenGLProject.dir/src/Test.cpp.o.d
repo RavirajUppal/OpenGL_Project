@@ -1,6 +1,5 @@
-CMakeFiles/OpenGLProject.dir/src/TestModel.cpp.o: \
-  /Users/raviraj_uppal/Projects/OpenGL/src/TestModel.cpp \
-  /Users/raviraj_uppal/Projects/OpenGL/headerFiles/TestModel.h \
+CMakeFiles/OpenGLProject.dir/src/Test.cpp.o: \
+  /Users/raviraj_uppal/Projects/OpenGL/src/Test.cpp \
   /Users/raviraj_uppal/Projects/OpenGL/headerFiles/Test.h \
   /Users/raviraj_uppal/Projects/OpenGL/headerFiles/Mesh.h \
   /Users/raviraj_uppal/Projects/OpenGL/headerFiles/VAO.h \
@@ -1163,26 +1162,4 @@ CMakeFiles/OpenGLProject.dir/src/TestModel.cpp.o: \
   /Users/raviraj_uppal/Projects/OpenGL/headerFiles/Texture.h \
   /Users/raviraj_uppal/Projects/OpenGL/libs/stb/stb_image.h \
   /Users/raviraj_uppal/Projects/OpenGL/libs/imgui/imgui.h \
-  /Users/raviraj_uppal/Projects/OpenGL/libs/imgui/imconfig.h \
-  /Users/raviraj_uppal/Projects/OpenGL/headerFiles/Model.h \
-  /Users/raviraj_uppal/Projects/OpenGL/libs/json/json.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/numeric \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/accumulate.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/adjacent_difference.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/inner_product.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/iota.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/partial_sum.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/exclusive_scan.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/gcd_lcm.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/inclusive_scan.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/pstl.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/reduce.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/transform_exclusive_scan.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/transform_inclusive_scan.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/transform_reduce.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/execution \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_execution_policy.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/forward_list \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/map \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/valarray
+  /Users/raviraj_uppal/Projects/OpenGL/libs/imgui/imconfig.h

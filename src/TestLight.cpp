@@ -44,8 +44,8 @@ TestLight::TestLight(GLFWwindow *window) : Test(window), m_Window(window)
         Texture(TEXTURE_DIR "planks.png", "diffuse", 0),
         Texture(TEXTURE_DIR "planksSpec.png", "specular", 1)};
 
-	glfwGetFramebufferSize(window, &m_FramebufferWidth, &m_FramebufferHeight);
-	glViewport(0, 0, m_FramebufferWidth, m_FramebufferHeight);
+	glfwGetFramebufferSize(window, &FrameWidth, &FrameHeight);
+	glViewport(0, 0, FrameWidth, FrameHeight);
 
     std::vector<Vertex> verts(vertices, vertices + sizeof(vertices) / sizeof(Vertex));
 	std::vector<GLuint> indi(indices, indices + sizeof(indices) / sizeof(GLuint));
@@ -85,7 +85,7 @@ TestLight::TestLight(GLFWwindow *window) : Test(window), m_Window(window)
 	glUniformMatrix4fv(glGetUniformLocation(m_FloorShader->ID, "rotation"), 1, GL_FALSE, glm::value_ptr( glm::mat4(1.0f)));
 	glUniformMatrix4fv(glGetUniformLocation(m_FloorShader->ID, "scale"), 1, GL_FALSE, glm::value_ptr( glm::mat4(1.0f)));
 
-	m_Camera = std::make_unique<Camera>(m_FramebufferHeight, m_FramebufferHeight, glm::vec3(0.0f, 1.0f, 3.0f), glm::vec3(0.0f, -0.2f, -1.0f));
+	m_Camera = std::make_unique<Camera>(FrameHeight, FrameHeight, glm::vec3(0.0f, 1.0f, 3.0f), glm::vec3(0.0f, -0.2f, -1.0f));
 }
 
 TestLight::~TestLight()
@@ -99,6 +99,18 @@ void TestLight::OnUpdate(float deltaTime)
 }
 
 void TestLight::OnRender()
+{
+    if (m_PostProcessing)
+    {
+        Test::BindPostProcessingFrameBuffer();
+        DrawScene();
+        Test::DrawPostProcessingOnScreen();
+        return;
+    }
+    DrawScene();
+}
+
+void TestLight::DrawScene()
 {
     m_Floor->Draw(*m_FloorShader, *m_Camera);
     m_Light->Draw(*m_LightShader, *m_Camera);
@@ -121,6 +133,7 @@ void TestLight::OnImguiRender()
 	    m_FloorShader->Activate();
         glUniform1i(glGetUniformLocation(m_FloorShader->ID, "lightMode"), 2);
     }
+    Test::OnImguiRender();
 }
 
 void TestLight::OnWindowResize(GLFWwindow *window, int width, int height)
