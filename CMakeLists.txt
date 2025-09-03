@@ -51,8 +51,8 @@ target_link_libraries(OpenGLProject
 
 # Shader and texture path macro
 target_compile_definitions(OpenGLProject PRIVATE
-    SHADER_DIR=\"resources/Shaders/\"
-    TEXTURE_DIR=\"resources/Textures/\"
+    SHADER_DIR=\"${CMAKE_SOURCE_DIR}/resources/Shaders/\"
+    TEXTURE_DIR=\"${CMAKE_SOURCE_DIR}/resources/Textures/\"
 )
 
 

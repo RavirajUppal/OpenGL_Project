@@ -3,7 +3,7 @@
 
 # compile C with /usr/bin/cc
 # compile CXX with /usr/bin/c++
-C_DEFINES = -DSHADER_DIR=\"resources/Shaders/\" -DTEXTURE_DIR=\"resources/Textures/\"
+C_DEFINES = -DSHADER_DIR=\"/Users/raviraj_uppal/Projects/OpenGL/resources/Shaders/\" -DTEXTURE_DIR=\"/Users/raviraj_uppal/Projects/OpenGL/resources/Textures/\"
 
 C_INCLUDES = -I/opt/homebrew/include -I/Users/raviraj_uppal/Projects/OpenGL/headerFiles -I/Users/raviraj_uppal/Projects/OpenGL/libs/glad/include -I/Users/raviraj_uppal/Projects/OpenGL/libs
 
@@ -11,7 +11,7 @@ C_FLAGSarm64 = -g -arch arm64
 
 C_FLAGS = -g -arch arm64
 
-CXX_DEFINES = -DSHADER_DIR=\"resources/Shaders/\" -DTEXTURE_DIR=\"resources/Textures/\"
+CXX_DEFINES = -DSHADER_DIR=\"/Users/raviraj_uppal/Projects/OpenGL/resources/Shaders/\" -DTEXTURE_DIR=\"/Users/raviraj_uppal/Projects/OpenGL/resources/Textures/\"
 
 CXX_INCLUDES = -I/opt/homebrew/include -I/Users/raviraj_uppal/Projects/OpenGL/headerFiles -I/Users/raviraj_uppal/Projects/OpenGL/libs/glad/include -I/Users/raviraj_uppal/Projects/OpenGL/libs
 
