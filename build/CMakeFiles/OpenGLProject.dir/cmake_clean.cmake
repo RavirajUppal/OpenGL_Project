@@ -31,6 +31,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/OpenGLProject.dir/src/TestCubeMap.cpp.o.d"
   "CMakeFiles/OpenGLProject.dir/src/TestDynamicLight.cpp.o"
   "CMakeFiles/OpenGLProject.dir/src/TestDynamicLight.cpp.o.d"
+  "CMakeFiles/OpenGLProject.dir/src/TestInstance.cpp.o"
+  "CMakeFiles/OpenGLProject.dir/src/TestInstance.cpp.o.d"
   "CMakeFiles/OpenGLProject.dir/src/TestLight.cpp.o"
   "CMakeFiles/OpenGLProject.dir/src/TestLight.cpp.o.d"
   "CMakeFiles/OpenGLProject.dir/src/TestMenu.cpp.o"

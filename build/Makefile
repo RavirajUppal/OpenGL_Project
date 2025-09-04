@@ -513,6 +513,30 @@ src/TestDynamicLight.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/TestDynamicLight.cpp.s
 .PHONY : src/TestDynamicLight.cpp.s
 
+src/TestInstance.o: src/TestInstance.cpp.o
+.PHONY : src/TestInstance.o
+
+# target to build an object file
+src/TestInstance.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/TestInstance.cpp.o
+.PHONY : src/TestInstance.cpp.o
+
+src/TestInstance.i: src/TestInstance.cpp.i
+.PHONY : src/TestInstance.i
+
+# target to preprocess a source file
+src/TestInstance.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/TestInstance.cpp.i
+.PHONY : src/TestInstance.cpp.i
+
+src/TestInstance.s: src/TestInstance.cpp.s
+.PHONY : src/TestInstance.s
+
+# target to generate assembly for a file
+src/TestInstance.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/TestInstance.cpp.s
+.PHONY : src/TestInstance.cpp.s
+
 src/TestLight.o: src/TestLight.cpp.o
 .PHONY : src/TestLight.o
 
@@ -762,6 +786,9 @@ help:
 	@echo "... src/TestDynamicLight.o"
 	@echo "... src/TestDynamicLight.i"
 	@echo "... src/TestDynamicLight.s"
+	@echo "... src/TestInstance.o"
+	@echo "... src/TestInstance.i"
+	@echo "... src/TestInstance.s"
 	@echo "... src/TestLight.o"
 	@echo "... src/TestLight.i"
 	@echo "... src/TestLight.s"

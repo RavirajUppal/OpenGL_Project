@@ -17,6 +17,7 @@
 #include "TestDynamicLight.h"
 #include "TestModel.h"
 #include "TestCubeMap.h"
+#include "TestInstance.h"
 
 
 // Vertex vertices[] =
@@ -157,6 +158,7 @@ int main()
 	testMenu->Register<TestDynamicLight>("Dynamic Lighting");
 	testMenu->Register<TestModel>("Model");
 	testMenu->Register<TestCubeMap>("SkyBox");
+	testMenu->Register<TestInstance>("Instances");
 
 
 	glfwSetWindowUserPointer(window, &currentTest);

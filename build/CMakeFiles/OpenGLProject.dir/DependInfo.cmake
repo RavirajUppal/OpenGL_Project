@@ -24,6 +24,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/raviraj_uppal/Projects/OpenGL/src/Test.cpp" "CMakeFiles/OpenGLProject.dir/src/Test.cpp.o" "gcc" "CMakeFiles/OpenGLProject.dir/src/Test.cpp.o.d"
   "/Users/raviraj_uppal/Projects/OpenGL/src/TestCubeMap.cpp" "CMakeFiles/OpenGLProject.dir/src/TestCubeMap.cpp.o" "gcc" "CMakeFiles/OpenGLProject.dir/src/TestCubeMap.cpp.o.d"
   "/Users/raviraj_uppal/Projects/OpenGL/src/TestDynamicLight.cpp" "CMakeFiles/OpenGLProject.dir/src/TestDynamicLight.cpp.o" "gcc" "CMakeFiles/OpenGLProject.dir/src/TestDynamicLight.cpp.o.d"
+  "/Users/raviraj_uppal/Projects/OpenGL/src/TestInstance.cpp" "CMakeFiles/OpenGLProject.dir/src/TestInstance.cpp.o" "gcc" "CMakeFiles/OpenGLProject.dir/src/TestInstance.cpp.o.d"
   "/Users/raviraj_uppal/Projects/OpenGL/src/TestLight.cpp" "CMakeFiles/OpenGLProject.dir/src/TestLight.cpp.o" "gcc" "CMakeFiles/OpenGLProject.dir/src/TestLight.cpp.o.d"
   "/Users/raviraj_uppal/Projects/OpenGL/src/TestMenu.cpp" "CMakeFiles/OpenGLProject.dir/src/TestMenu.cpp.o" "gcc" "CMakeFiles/OpenGLProject.dir/src/TestMenu.cpp.o.d"
   "/Users/raviraj_uppal/Projects/OpenGL/src/TestModel.cpp" "CMakeFiles/OpenGLProject.dir/src/TestModel.cpp.o" "gcc" "CMakeFiles/OpenGLProject.dir/src/TestModel.cpp.o.d"

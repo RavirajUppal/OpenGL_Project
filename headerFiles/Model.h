@@ -11,7 +11,7 @@ class Model
 {
 public:
 	// Loads in a model from a file and stores tha information in 'data', 'JSON', and 'file'
-	Model(const char* file);
+	Model(const char* file, unsigned int instanceCount = 1, std::vector<glm::mat4> instanceMatrices = {});
 
 	void Draw(Shader& shader, Camera& camera);
 
@@ -27,6 +27,8 @@ private:
 	std::vector<glm::quat> rotationsMeshes;
 	std::vector<glm::vec3> scalesMeshes;
 	std::vector<glm::mat4> matricesMeshes;
+	unsigned int instanceCount;
+    std::vector<glm::mat4> instanceMatrices;
 
 	// Prevents textures from being loaded twice
 	std::vector<std::string> loadedTexName;

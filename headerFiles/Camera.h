@@ -28,7 +28,7 @@ class Camera
         int width;
         int height;
         glm::mat4 cameraMatrix = glm::mat4(1.0f);
-        float speed = 0.05f;
+        float speed = 0.2f;
         float sensitivity = 300.0f;
         bool firstClick = true;
 };
