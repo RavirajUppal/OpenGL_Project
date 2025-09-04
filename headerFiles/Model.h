@@ -34,17 +34,6 @@ private:
 	std::vector<std::string> loadedTexName;
 	std::vector<Texture> loadedTex;
 
-	void DrawMesh
-	(
-		Mesh& mesh,
-		Shader& shader, 
-		Camera& camera,
-		glm::mat4 matrix = glm::mat4(1.0f),
-		glm::vec3 translation = glm::vec3(0.0f, 0.0f, 0.0f),
-		glm::quat rotation = glm::quat(1.0f, 0.0f, 0.0f, 0.0f),
-		glm::vec3 scale = glm::vec3(1.0f, 1.0f, 1.0f)
-	);
-
 	// Loads a single mesh by its index
 	void loadMesh(unsigned int indMesh);
 

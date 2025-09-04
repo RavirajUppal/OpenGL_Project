@@ -58,32 +58,30 @@ TestLight::TestLight(GLFWwindow *window) : Test(window), m_Window(window)
 	m_LightShader = std::make_unique<Shader>(SHADER_DIR "light.vert", SHADER_DIR "light.frag");
 
 	m_Light = std::make_unique<Mesh>(lightVerts, lightIndi, tex);
-	// m_Light->TexSlot(*m_LightShader);
 
     glm::vec4 lightColor = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
-	glm::vec3 lightPos = glm::vec3(0.5f, 0.5f, 0.5f);
-	glm::mat4 lightModel = glm::mat4(1.0f);
-	lightModel = glm::translate(lightModel, lightPos);
+	glm::vec3 lightPos = glm::vec3(0.5f, 0.9f, 0.5f);
+	// glm::mat4 lightModel = glm::mat4(1.0f);
+	// lightModel = glm::translate(lightModel, lightPos);
 	m_LightShader->Activate();
-	glUniformMatrix4fv(glGetUniformLocation(m_LightShader->ID, "model"), 1, GL_FALSE, glm::value_ptr(lightModel));
+	// glUniformMatrix4fv(glGetUniformLocation(m_LightShader->ID, "model"), 1, GL_FALSE, glm::value_ptr(lightModel));
 	glUniform4f(glGetUniformLocation(m_LightShader->ID, "lightColor"), lightColor.x, lightColor.y, lightColor.z, lightColor.w);
 
 
     m_FloorShader = std::make_unique<Shader>(SHADER_DIR "default.vert", SHADER_DIR "default.frag");
 	m_Floor = std::make_unique<Mesh>(verts, indi, tex);
-	// m_Floor->TexSlot(*m_FloorShader);
-    glm::vec3 floorPos = glm::vec3(0.0f, -0.4f, 0.0f);
-	glm::mat4 floorModel = glm::mat4(1.0f);
-	floorModel = glm::translate(floorModel, floorPos);
+    // glm::vec3 floorPos = glm::vec3(0.0f, -0.4f, 0.0f);
+	// glm::mat4 floorModel = glm::mat4(1.0f);
+	// floorModel = glm::translate(floorModel, floorPos);
 	m_FloorShader->Activate();
-	glUniformMatrix4fv(glGetUniformLocation(m_FloorShader->ID, "model"), 1, GL_FALSE, glm::value_ptr(floorModel));
+	// glUniformMatrix4fv(glGetUniformLocation(m_FloorShader->ID, "model"), 1, GL_FALSE, glm::value_ptr(floorModel));
 	glUniform4f(glGetUniformLocation(m_FloorShader->ID, "lightColor"), lightColor.x, lightColor.y, lightColor.z, lightColor.w);
 	glUniform3f(glGetUniformLocation(m_FloorShader->ID, "lightPos"), lightPos.x, lightPos.y, lightPos.z);
 	glUniform1i(glGetUniformLocation(m_FloorShader->ID, "lightMode"), 0);
 
-    glUniformMatrix4fv(glGetUniformLocation(m_FloorShader->ID, "translation"), 1, GL_FALSE, glm::value_ptr( glm::mat4(1.0f)));
-	glUniformMatrix4fv(glGetUniformLocation(m_FloorShader->ID, "rotation"), 1, GL_FALSE, glm::value_ptr( glm::mat4(1.0f)));
-	glUniformMatrix4fv(glGetUniformLocation(m_FloorShader->ID, "scale"), 1, GL_FALSE, glm::value_ptr( glm::mat4(1.0f)));
+    // glUniformMatrix4fv(glGetUniformLocation(m_FloorShader->ID, "translation"), 1, GL_FALSE, glm::value_ptr( glm::mat4(1.0f)));
+	// glUniformMatrix4fv(glGetUniformLocation(m_FloorShader->ID, "rotation"), 1, GL_FALSE, glm::value_ptr( glm::mat4(1.0f)));
+	// glUniformMatrix4fv(glGetUniformLocation(m_FloorShader->ID, "scale"), 1, GL_FALSE, glm::value_ptr( glm::mat4(1.0f)));
 
 	m_Camera = std::make_unique<Camera>(FrameHeight, FrameHeight, glm::vec3(0.0f, 1.0f, 3.0f), glm::vec3(0.0f, -0.2f, -1.0f));
 }
@@ -113,7 +111,11 @@ void TestLight::OnRender()
 void TestLight::DrawScene()
 {
     m_Floor->Draw(*m_FloorShader, *m_Camera);
-    m_Light->Draw(*m_LightShader, *m_Camera);
+
+    glm::vec3 lightPos = glm::vec3(0.5f, 0.9f, 0.5f);
+	glm::mat4 lightModel = glm::mat4(1.0f);
+	lightModel = glm::translate(lightModel, lightPos);
+    m_Light->Draw(*m_LightShader, *m_Camera, lightModel);
 }
 
 void TestLight::OnImguiRender()

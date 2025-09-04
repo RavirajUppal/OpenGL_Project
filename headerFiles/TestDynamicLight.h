@@ -21,7 +21,7 @@ private:
     std::unique_ptr<Camera> m_Camera;
     std::unique_ptr<Mesh> m_Floor;
     std::unique_ptr<Mesh> m_Light;
-    float m_LightPos[3] = {0.5f, 0.5f, 0.5f};
+    float m_LightPos[3] = {0.5f, 0.9f, 0.5f};
     void DrawScene();
 };
 
