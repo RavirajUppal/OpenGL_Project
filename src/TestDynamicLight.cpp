@@ -100,14 +100,14 @@ void TestDynamicLight::OnUpdate(float deltaTime)
 
 void TestDynamicLight::OnRender()
 {
-    if (m_PostProcessing)
+    // if (m_PostProcessing)
     {
         Test::BindPostProcessingFrameBuffer();
         DrawScene();
         Test::DrawPostProcessingOnScreen();
-        return;
+        // return;
     }
-    DrawScene();
+    // DrawScene();
 }
 
 void TestDynamicLight::DrawScene()

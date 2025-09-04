@@ -98,14 +98,14 @@ void TestLight::OnUpdate(float deltaTime)
 
 void TestLight::OnRender()
 {
-    if (m_PostProcessing)
+    // if (m_PostProcessing)
     {
         Test::BindPostProcessingFrameBuffer();
         DrawScene();
         Test::DrawPostProcessingOnScreen();
-        return;
+        // return;
     }
-    DrawScene();
+    // DrawScene();
 }
 
 void TestLight::DrawScene()

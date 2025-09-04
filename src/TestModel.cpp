@@ -44,14 +44,14 @@ void TestModel::OnUpdate(float deltaTime)
 
 void TestModel::OnRender()
 {
-    if (m_PostProcessing)
+    // if (m_PostProcessing)
     {
         m_ShowOutline = false;
         Test::BindPostProcessingFrameBuffer();
         DrawModel();
         Test::DrawPostProcessingOnScreen();
     }
-    else if (m_ShowOutline)
+    if (m_ShowOutline)
     {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT); 
         glStencilFunc(GL_ALWAYS, 1, 0xFF); 
@@ -71,10 +71,10 @@ void TestModel::OnRender()
         glStencilFunc(GL_ALWAYS, 1, 0xFF);
         glEnable(GL_DEPTH_TEST); 
     }
-    else
-    {
-        DrawModel();
-    }
+    // else
+    // {
+    //     DrawModel();
+    // }
 }
 
 void TestModel::DrawModel()

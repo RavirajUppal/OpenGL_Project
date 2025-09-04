@@ -18,12 +18,13 @@ public:
     void BindPostProcessingFrameBuffer();
     void DrawPostProcessingOnScreen();
     int FrameWidth, FrameHeight;
-    bool m_PostProcessing = false;
-
+    
 private:
-    unsigned int m_FBO, m_FrameBufferTex;
+    bool m_MSAA, m_PostProcessing = false;
+    int m_CurrentPostProcess = 0;
+    unsigned int m_MultisamplingFBO, m_PostProcessingFBO, m_FrameBufferTex;
     VAO m_FrameBufferVAO;
-    std::unique_ptr<Shader> m_FrameBufferShader;
+    std::unique_ptr<Shader> m_PostProcessShader;
 };
 
 #endif

@@ -130,16 +130,16 @@ void TestInstance::OnUpdate(float deltaTime)
 
 void TestInstance::OnRender()
 {
-    if (m_PostProcessing)
+    // if (m_PostProcessing)
     {
         Test::BindPostProcessingFrameBuffer();
         DrawModel();
         Test::DrawPostProcessingOnScreen();
     }
-    else
-    {
-        DrawModel();
-    }
+    // else
+    // {
+    //     DrawModel();
+    // }
 }
 
 void TestInstance::DrawModel()

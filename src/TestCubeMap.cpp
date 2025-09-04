@@ -103,14 +103,14 @@ void TestCubeMap::OnUpdate(float deltaTime)
 
 void TestCubeMap::OnRender()
 {
-    if (m_PostProcessing)
+    // if (m_PostProcessing)
     {
         Test::BindPostProcessingFrameBuffer();
         DrawSkyBox();
         Test::DrawPostProcessingOnScreen();
-        return;
+        // return;
     }
-    DrawSkyBox();
+    // DrawSkyBox();
 }
 
 void TestCubeMap::DrawSkyBox()
