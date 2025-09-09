@@ -181,7 +181,7 @@ void Test::BindPostProcessingFrameBuffer()
     {
         RenderShadowPass();
     }
-    else if (m_MSAA)
+    if (m_MSAA)
     {
         glBindFramebuffer(GL_FRAMEBUFFER, m_MultisamplingFBO);
     }
@@ -190,47 +190,40 @@ void Test::BindPostProcessingFrameBuffer()
         glBindFramebuffer(GL_FRAMEBUFFER, m_PostProcessingFBO);
     }
 
-    // glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
-    // glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    // glEnable(GL_DEPTH_TEST);
+    glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glEnable(GL_DEPTH_TEST);
 }
 
 void Test::DrawPostProcessingOnScreen()
 {
-    // if (m_Shadow)
-    // {
-    //     glBindFramebuffer(GL_FRAMEBUFFER, 0);
-    //     glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
-    //     glClear(GL_COLOR_BUFFER_BIT);
-
-    //     glDisable(GL_DEPTH_TEST);
-    //     m_FrameBufferVAO.Bind();
-    //     m_DebugOutputShader->Activate();
-    //     glActiveTexture(GL_TEXTURE0);
-    //     glBindTexture(GL_TEXTURE_2D, m_DepthTexture);
-    //     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-    //     glEnable(GL_DEPTH_TEST);
-    //     return;
-    // }
-    if (!m_MSAA && !m_PostProcessing)
-        return;
     if (m_MSAA)
     {
-        glBindFramebuffer(GL_READ_FRAMEBUFFER, m_MultisamplingFBO);
-        glBindFramebuffer(GL_DRAW_FRAMEBUFFER, m_PostProcessingFBO);
-        glBlitFramebuffer(0, 0, FrameWidth, FrameHeight, 0, 0, FrameWidth, FrameHeight, GL_COLOR_BUFFER_BIT, GL_NEAREST);
+        if (m_PostProcessing){
+            glBindFramebuffer(GL_READ_FRAMEBUFFER, m_MultisamplingFBO);
+            glBindFramebuffer(GL_DRAW_FRAMEBUFFER, m_PostProcessingFBO);
+            glBlitFramebuffer(0, 0, FrameWidth, FrameHeight, 0, 0, FrameWidth, 
+                FrameHeight, GL_COLOR_BUFFER_BIT, GL_NEAREST);
+        }else{
+            glBindFramebuffer(GL_READ_FRAMEBUFFER, m_MultisamplingFBO);
+            glBindFramebuffer(GL_DRAW_FRAMEBUFFER, 0);
+            glBlitFramebuffer(0, 0, FrameWidth, FrameHeight, 0, 0, FrameWidth, 
+                FrameHeight, GL_COLOR_BUFFER_BIT, GL_NEAREST);
+        }
     }
-    glBindFramebuffer(GL_FRAMEBUFFER, 0);
-    glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT);
-
-    glDisable(GL_DEPTH_TEST);
-    m_PostProcessShader->Activate();
-    m_FrameBufferVAO.Bind();
-    glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, m_FrameBufferTex);
-    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-    glEnable(GL_DEPTH_TEST);
+    if (m_PostProcessing){
+        glBindFramebuffer(GL_FRAMEBUFFER, 0);
+        glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT);
+    
+        glDisable(GL_DEPTH_TEST);
+        m_PostProcessShader->Activate();
+        m_FrameBufferVAO.Bind();
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D, m_FrameBufferTex);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        glEnable(GL_DEPTH_TEST);
+    }
 }
 
 void Test::RenderShadowPass()
@@ -238,15 +231,18 @@ void Test::RenderShadowPass()
     glViewport(0, 0, m_ShadowWidth, m_ShadowHeight);
     glBindFramebuffer(GL_FRAMEBUFFER, m_ShadowMapFBO);
     glClear(GL_DEPTH_BUFFER_BIT);
-    ConfigureShaderAndMatrix();
+    ConfigureShadowShader();
     RenderShadowMap(m_ShadowMapShader);
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
     glViewport(0, 0, FrameWidth, FrameHeight);
 }
 
-
-void Test::ConfigureShaderAndMatrix()
+void Test::ConfigureShadowShader()
 {
+    if (m_Light == nullptr){
+        std::cerr << "cant Configure lightSpaceMatrix bcoz Light is null.\n";
+        return;
+    }
     glm::mat4 lightProjection= glm::ortho(-5.0f, 5.0f, -5.0f, 5.0f, 1.0f, 10.0f);
     glm::mat4 lightView = glm::lookAt(m_Light->GetPosition(), glm::vec3(0.0f), glm::vec3(0.0f, 0.0f, -1.0f));
     glm::mat4 lightSpaceMatrix = lightProjection * lightView;

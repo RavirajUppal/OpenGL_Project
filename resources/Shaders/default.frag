@@ -10,6 +10,7 @@ in vec4 fragPosLightSpace;
 uniform sampler2D diffuse0;
 uniform sampler2D specular0;
 uniform sampler2D shadowMap;
+uniform bool useShadow;
 
 uniform vec4 lightColor;
 uniform vec3 lightPos;
@@ -62,7 +63,7 @@ vec4 DirectionalLight()
   	specular = specAmount * specularLight;
   }
 
-  float shadow = ShadowCalculation(fragPosLightSpace, Normal, lightDirection);
+  float shadow = useShadow ? ShadowCalculation(fragPosLightSpace, Normal, lightDirection) : 0.0f;
 
   return (texture(diffuse0, texCoord)  * (diffuse * (1.0f - shadow) + ambient) + texture(specular0, texCoord).r  * specular * (1.0f - shadow)) * lightColor ;
 }
@@ -91,7 +92,7 @@ vec4 PointLight()
       specular = specAmount * specularLight;
   }
 
-  float shadow = ShadowCalculation(fragPosLightSpace, Normal, lightDirection);
+  float shadow = useShadow ? ShadowCalculation(fragPosLightSpace, Normal, lightDirection) : 0.0f;
 	
   return (texture(diffuse0, texCoord)  * (diffuse * (1.0f - shadow) * inten + ambient) + texture(specular0, texCoord).r  * specular * (1.0f - shadow) * inten) * lightColor ;
 }
@@ -121,7 +122,7 @@ vec4 SpotLight()
 	float angle = dot(vec3(0.0f, -1.0f, 0.0f), -lightDirection);
 	float inten = clamp((angle - outerCone) / (innerCone - outerCone), 0.0f, 1.0f);
 
-  	float shadow = ShadowCalculation(fragPosLightSpace, Normal, lightDirection);
+  	float shadow = useShadow ? ShadowCalculation(fragPosLightSpace, Normal, lightDirection) : 0.0f;
 
 	return (texture(diffuse0, texCoord) * (diffuse * (1.0f - shadow) * inten + ambient) + texture(specular0, texCoord).r * specular * (1.0f - shadow) * inten) * lightColor;
 }

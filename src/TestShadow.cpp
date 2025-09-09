@@ -214,8 +214,13 @@ void TestShadow::DrawScene()
     m_FloorShader->Activate();
     m_FloorShader->SetMat4("lightSpaceMatrix", glm::value_ptr(lightSpaceMatrix));
     m_FloorShader->SetFloat3("lightPos", lightPos.x, lightPos.y, lightPos.z);
-    glActiveTexture(GL_TEXTURE3);
-    glBindTexture(GL_TEXTURE_2D, m_DepthTexture);
+    if (m_Shadow){
+        m_FloorShader->SetInt1("useShadow", 1);
+        glActiveTexture(GL_TEXTURE3);
+        glBindTexture(GL_TEXTURE_2D, m_DepthTexture);
+    } else {
+        m_FloorShader->SetInt1("useShadow", 0);
+    }
     m_Floor->Draw(*m_FloorShader, *m_Camera);
 
     // m_CubeInstanceShader->Activate();

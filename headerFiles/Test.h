@@ -20,17 +20,17 @@ public:
     void SetFrameBufferData();
     void BindPostProcessingFrameBuffer();
     void DrawPostProcessingOnScreen();
+    
+protected:
     int FrameWidth, FrameHeight;
     bool m_Shadow = false;
     unsigned int m_DepthTexture;
-    VAO m_FrameBufferVAO;
-
-protected:
     std::unique_ptr<Light> m_Light;
     
 private:
     int m_ShadowWidth = 1024, m_ShadowHeight = 1024;
-    bool m_MSAA, m_PostProcessing = false;
+    bool m_MSAA = false, m_PostProcessing = false;
+    VAO m_FrameBufferVAO;
     int m_CurrentPostProcess = 0;
     unsigned int m_MultisamplingFBO, m_PostProcessingFBO, m_FrameBufferTex;
     unsigned int m_ShadowMapFBO;
@@ -38,7 +38,7 @@ private:
     std::unique_ptr<Shader> m_ShadowMapShader;
     std::unique_ptr<Shader> m_DebugOutputShader;
     void RenderShadowPass();
-    void ConfigureShaderAndMatrix();
+    void ConfigureShadowShader();
 };
 
 #endif
