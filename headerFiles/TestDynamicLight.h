@@ -20,9 +20,12 @@ private:
     std::unique_ptr<Shader> m_LightShader;
     std::unique_ptr<Camera> m_Camera;
     std::unique_ptr<Mesh> m_Floor;
-    std::unique_ptr<Mesh> m_Light;
-    float m_LightPos[3] = {0.5f, 0.9f, 0.5f};
+    // std::unique_ptr<Mesh> m_Light;
+    float m_LightPos[3] = {0.5f, 4.0f, 0.5f};
     void DrawScene();
+    void RenderTheShadowMap();
+    glm::mat4 GetLightSpaceMatrix();
+    std::unique_ptr<Mesh> m_Cube;
 };
 
 #endif

@@ -19,7 +19,7 @@ TestModel::TestModel(GLFWwindow *window) : Test(window), m_Window(window)
 	m_ShaderProgram->Activate();
 	glUniform4f(glGetUniformLocation(m_ShaderProgram->ID, "lightColor"), lightColor.x, lightColor.y, lightColor.z, lightColor.w);
 	glUniform3f(glGetUniformLocation(m_ShaderProgram->ID, "lightPos"), lightPos.x, lightPos.y, lightPos.z);
-	glUniform1i(glGetUniformLocation(m_ShaderProgram->ID, "lightMode"), 2);
+	glUniform1i(glGetUniformLocation(m_ShaderProgram->ID, "lightMode"), 0);
 
     m_OutliningShader = std::make_unique<Shader>(SHADER_DIR "outlining.vert", SHADER_DIR "outlining.frag");
 

@@ -61,6 +61,34 @@ unsigned int CreatePostProcessFBO(unsigned int& m_FrameBufferTex, int FrameWidth
     return fbo;
 }
 
+unsigned int CreateDepthMapFBO(unsigned int& depthTexture, int shadowWidth, int shadowHeight)
+{
+    unsigned int fbo;
+    glGenFramebuffers(1, &fbo);
+    
+    glGenTextures(1, &depthTexture);
+    glBindTexture(GL_TEXTURE_2D, depthTexture);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT, shadowWidth, shadowHeight, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
+    float border[] = {1.0f, 1.0f, 1.0f, 1.0f};
+    glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, border);
+
+    glBindFramebuffer(GL_FRAMEBUFFER, fbo);
+    glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, depthTexture, 0);
+    glDrawBuffer(GL_NONE);
+    glReadBuffer(GL_NONE);
+
+    auto fboStatus = glCheckFramebufferStatus(GL_FRAMEBUFFER);
+    if (fboStatus != GL_FRAMEBUFFER_COMPLETE)
+        std::cout << "Shadow Map Framebuffer error: " << fboStatus << std::endl;
+    glBindFramebuffer(GL_FRAMEBUFFER, 0);
+    
+    return fbo;
+}
+
 Test::Test(GLFWwindow *window)
 {
     glfwGetFramebufferSize(window, &FrameWidth, &FrameHeight);
@@ -84,6 +112,7 @@ void Test::OnRender()
 void Test::OnImguiRender()
 {
     ImGui::Checkbox("MSAA", &m_MSAA);
+    ImGui::Checkbox("Shadow", &m_Shadow);
     const char* items[] = { "None", "Inverse Color", "Black & White", "Sharpen", "Blur", "EdgeOnly" };
     if (ImGui::Combo("Post-Processing options", &m_CurrentPostProcess, items, IM_ARRAYSIZE(items)))
     {
@@ -104,7 +133,18 @@ void Test::SetFrameBufferData()
 {
     m_PostProcessShader = std::make_unique<Shader>(SHADER_DIR "postProcess.vert", SHADER_DIR "postProcess.frag");
     m_PostProcessShader->Activate();
-    glUniform1i(glGetUniformLocation(m_PostProcessShader->ID, "screenTexture"), 0);
+    // m_PostProcessShader->PrintActiveUniforms();
+    m_PostProcessShader->SetInt1("screenTexture", 0);
+
+    m_DebugOutputShader = std::make_unique<Shader>(SHADER_DIR "depthDebug.vert", SHADER_DIR "depthDebug.frag");
+    m_DebugOutputShader->Activate();
+    // m_DebugOutputShader->PrintActiveUniforms();
+    m_DebugOutputShader->SetInt1("depthMap", 0);
+    m_DebugOutputShader->SetFloat1("nearPlane", 1.0f);
+    m_DebugOutputShader->SetFloat1("farPlane", 10.0f);
+
+
+    m_ShadowMapShader = std::make_unique<Shader>(SHADER_DIR "shadowMap.vert", SHADER_DIR "shadowMap.frag");
 
     Vertex quadVertices[] =
         {//               COORDINATES           /            NORMALS          /           COLORS         /       TEXTURE COORDINATES    //
@@ -132,11 +172,16 @@ void Test::SetFrameBufferData()
 
     m_MultisamplingFBO = CreateMultiSampleFBO(4, FrameWidth, FrameHeight);
     m_PostProcessingFBO = CreatePostProcessFBO(m_FrameBufferTex, FrameWidth, FrameHeight);
+    m_ShadowMapFBO = CreateDepthMapFBO(m_DepthTexture, m_ShadowWidth, m_ShadowHeight);
 }
 
 void Test::BindPostProcessingFrameBuffer()
 {
-    if (m_MSAA)
+    if (m_Shadow)
+    {
+        RenderShadowPass();
+    }
+    else if (m_MSAA)
     {
         glBindFramebuffer(GL_FRAMEBUFFER, m_MultisamplingFBO);
     }
@@ -145,13 +190,28 @@ void Test::BindPostProcessingFrameBuffer()
         glBindFramebuffer(GL_FRAMEBUFFER, m_PostProcessingFBO);
     }
 
-    glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glEnable(GL_DEPTH_TEST);
+    // glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+    // glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    // glEnable(GL_DEPTH_TEST);
 }
 
 void Test::DrawPostProcessingOnScreen()
 {
+    // if (m_Shadow)
+    // {
+    //     glBindFramebuffer(GL_FRAMEBUFFER, 0);
+    //     glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+    //     glClear(GL_COLOR_BUFFER_BIT);
+
+    //     glDisable(GL_DEPTH_TEST);
+    //     m_FrameBufferVAO.Bind();
+    //     m_DebugOutputShader->Activate();
+    //     glActiveTexture(GL_TEXTURE0);
+    //     glBindTexture(GL_TEXTURE_2D, m_DepthTexture);
+    //     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+    //     glEnable(GL_DEPTH_TEST);
+    //     return;
+    // }
     if (!m_MSAA && !m_PostProcessing)
         return;
     if (m_MSAA)
@@ -171,4 +231,25 @@ void Test::DrawPostProcessingOnScreen()
     glBindTexture(GL_TEXTURE_2D, m_FrameBufferTex);
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
     glEnable(GL_DEPTH_TEST);
+}
+
+void Test::RenderShadowPass()
+{
+    glViewport(0, 0, m_ShadowWidth, m_ShadowHeight);
+    glBindFramebuffer(GL_FRAMEBUFFER, m_ShadowMapFBO);
+    glClear(GL_DEPTH_BUFFER_BIT);
+    ConfigureShaderAndMatrix();
+    RenderShadowMap(m_ShadowMapShader);
+    glBindFramebuffer(GL_FRAMEBUFFER, 0);
+    glViewport(0, 0, FrameWidth, FrameHeight);
+}
+
+
+void Test::ConfigureShaderAndMatrix()
+{
+    glm::mat4 lightProjection= glm::ortho(-5.0f, 5.0f, -5.0f, 5.0f, 1.0f, 10.0f);
+    glm::mat4 lightView = glm::lookAt(m_Light->GetPosition(), glm::vec3(0.0f), glm::vec3(0.0f, 0.0f, -1.0f));
+    glm::mat4 lightSpaceMatrix = lightProjection * lightView;
+    m_ShadowMapShader->Activate();
+    m_ShadowMapShader->SetMat4("lightSpaceMatrix", glm::value_ptr(lightSpaceMatrix));
 }

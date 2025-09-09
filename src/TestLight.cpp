@@ -57,10 +57,10 @@ TestLight::TestLight(GLFWwindow *window) : Test(window), m_Window(window)
 
 	m_LightShader = std::make_unique<Shader>(SHADER_DIR "light.vert", SHADER_DIR "light.frag");
 
-	m_Light = std::make_unique<Mesh>(lightVerts, lightIndi, tex);
-
     glm::vec4 lightColor = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
 	glm::vec3 lightPos = glm::vec3(0.5f, 0.9f, 0.5f);
+    m_Light = std::make_unique<Light>(lightPos, lightColor);
+    m_Light->m_Mesh = std::make_unique<Mesh>(lightVerts, lightIndi, tex);
 	// glm::mat4 lightModel = glm::mat4(1.0f);
 	// lightModel = glm::translate(lightModel, lightPos);
 	m_LightShader->Activate();
@@ -115,7 +115,7 @@ void TestLight::DrawScene()
     glm::vec3 lightPos = glm::vec3(0.5f, 0.9f, 0.5f);
 	glm::mat4 lightModel = glm::mat4(1.0f);
 	lightModel = glm::translate(lightModel, lightPos);
-    m_Light->Draw(*m_LightShader, *m_Camera, lightModel);
+    m_Light->m_Mesh->Draw(*m_LightShader, *m_Camera, lightModel);
 }
 
 void TestLight::OnImguiRender()
@@ -123,7 +123,7 @@ void TestLight::OnImguiRender()
     if (ImGui::Button("Spot Light"))
     {
 	    m_FloorShader->Activate();
-        glUniform1i(glGetUniformLocation(m_FloorShader->ID, "lightMode"), 0);
+        glUniform1i(glGetUniformLocation(m_FloorShader->ID, "lightMode"), 2);
     }
     if (ImGui::Button("Point Light"))
     {
@@ -133,7 +133,7 @@ void TestLight::OnImguiRender()
     if (ImGui::Button("Directional Light"))
     {
 	    m_FloorShader->Activate();
-        glUniform1i(glGetUniformLocation(m_FloorShader->ID, "lightMode"), 2);
+        glUniform1i(glGetUniformLocation(m_FloorShader->ID, "lightMode"), 0);
     }
     Test::OnImguiRender();
 }

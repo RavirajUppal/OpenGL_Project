@@ -100,10 +100,24 @@ CMakeFiles/OpenGLProject.dir/src/EBO.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OpenGLProject.dir/src/EBO.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/raviraj_uppal/Projects/OpenGL/src/EBO.cpp -o CMakeFiles/OpenGLProject.dir/src/EBO.cpp.s
 
+CMakeFiles/OpenGLProject.dir/src/Light.cpp.o: CMakeFiles/OpenGLProject.dir/flags.make
+CMakeFiles/OpenGLProject.dir/src/Light.cpp.o: /Users/raviraj_uppal/Projects/OpenGL/src/Light.cpp
+CMakeFiles/OpenGLProject.dir/src/Light.cpp.o: CMakeFiles/OpenGLProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/OpenGLProject.dir/src/Light.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGLProject.dir/src/Light.cpp.o -MF CMakeFiles/OpenGLProject.dir/src/Light.cpp.o.d -o CMakeFiles/OpenGLProject.dir/src/Light.cpp.o -c /Users/raviraj_uppal/Projects/OpenGL/src/Light.cpp
+
+CMakeFiles/OpenGLProject.dir/src/Light.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/OpenGLProject.dir/src/Light.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/raviraj_uppal/Projects/OpenGL/src/Light.cpp > CMakeFiles/OpenGLProject.dir/src/Light.cpp.i
+
+CMakeFiles/OpenGLProject.dir/src/Light.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OpenGLProject.dir/src/Light.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/raviraj_uppal/Projects/OpenGL/src/Light.cpp -o CMakeFiles/OpenGLProject.dir/src/Light.cpp.s
+
 CMakeFiles/OpenGLProject.dir/src/Mesh.cpp.o: CMakeFiles/OpenGLProject.dir/flags.make
 CMakeFiles/OpenGLProject.dir/src/Mesh.cpp.o: /Users/raviraj_uppal/Projects/OpenGL/src/Mesh.cpp
 CMakeFiles/OpenGLProject.dir/src/Mesh.cpp.o: CMakeFiles/OpenGLProject.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/OpenGLProject.dir/src/Mesh.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/OpenGLProject.dir/src/Mesh.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGLProject.dir/src/Mesh.cpp.o -MF CMakeFiles/OpenGLProject.dir/src/Mesh.cpp.o.d -o CMakeFiles/OpenGLProject.dir/src/Mesh.cpp.o -c /Users/raviraj_uppal/Projects/OpenGL/src/Mesh.cpp
 
 CMakeFiles/OpenGLProject.dir/src/Mesh.cpp.i: cmake_force
@@ -117,7 +131,7 @@ CMakeFiles/OpenGLProject.dir/src/Mesh.cpp.s: cmake_force
 CMakeFiles/OpenGLProject.dir/src/Model.cpp.o: CMakeFiles/OpenGLProject.dir/flags.make
 CMakeFiles/OpenGLProject.dir/src/Model.cpp.o: /Users/raviraj_uppal/Projects/OpenGL/src/Model.cpp
 CMakeFiles/OpenGLProject.dir/src/Model.cpp.o: CMakeFiles/OpenGLProject.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/OpenGLProject.dir/src/Model.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/OpenGLProject.dir/src/Model.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGLProject.dir/src/Model.cpp.o -MF CMakeFiles/OpenGLProject.dir/src/Model.cpp.o.d -o CMakeFiles/OpenGLProject.dir/src/Model.cpp.o -c /Users/raviraj_uppal/Projects/OpenGL/src/Model.cpp
 
 CMakeFiles/OpenGLProject.dir/src/Model.cpp.i: cmake_force
@@ -131,7 +145,7 @@ CMakeFiles/OpenGLProject.dir/src/Model.cpp.s: cmake_force
 CMakeFiles/OpenGLProject.dir/src/ShaderClass.cpp.o: CMakeFiles/OpenGLProject.dir/flags.make
 CMakeFiles/OpenGLProject.dir/src/ShaderClass.cpp.o: /Users/raviraj_uppal/Projects/OpenGL/src/ShaderClass.cpp
 CMakeFiles/OpenGLProject.dir/src/ShaderClass.cpp.o: CMakeFiles/OpenGLProject.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/OpenGLProject.dir/src/ShaderClass.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/OpenGLProject.dir/src/ShaderClass.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGLProject.dir/src/ShaderClass.cpp.o -MF CMakeFiles/OpenGLProject.dir/src/ShaderClass.cpp.o.d -o CMakeFiles/OpenGLProject.dir/src/ShaderClass.cpp.o -c /Users/raviraj_uppal/Projects/OpenGL/src/ShaderClass.cpp
 
 CMakeFiles/OpenGLProject.dir/src/ShaderClass.cpp.i: cmake_force
@@ -145,7 +159,7 @@ CMakeFiles/OpenGLProject.dir/src/ShaderClass.cpp.s: cmake_force
 CMakeFiles/OpenGLProject.dir/src/Test.cpp.o: CMakeFiles/OpenGLProject.dir/flags.make
 CMakeFiles/OpenGLProject.dir/src/Test.cpp.o: /Users/raviraj_uppal/Projects/OpenGL/src/Test.cpp
 CMakeFiles/OpenGLProject.dir/src/Test.cpp.o: CMakeFiles/OpenGLProject.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/OpenGLProject.dir/src/Test.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/OpenGLProject.dir/src/Test.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGLProject.dir/src/Test.cpp.o -MF CMakeFiles/OpenGLProject.dir/src/Test.cpp.o.d -o CMakeFiles/OpenGLProject.dir/src/Test.cpp.o -c /Users/raviraj_uppal/Projects/OpenGL/src/Test.cpp
 
 CMakeFiles/OpenGLProject.dir/src/Test.cpp.i: cmake_force
@@ -159,7 +173,7 @@ CMakeFiles/OpenGLProject.dir/src/Test.cpp.s: cmake_force
 CMakeFiles/OpenGLProject.dir/src/TestCubeMap.cpp.o: CMakeFiles/OpenGLProject.dir/flags.make
 CMakeFiles/OpenGLProject.dir/src/TestCubeMap.cpp.o: /Users/raviraj_uppal/Projects/OpenGL/src/TestCubeMap.cpp
 CMakeFiles/OpenGLProject.dir/src/TestCubeMap.cpp.o: CMakeFiles/OpenGLProject.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/OpenGLProject.dir/src/TestCubeMap.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/OpenGLProject.dir/src/TestCubeMap.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGLProject.dir/src/TestCubeMap.cpp.o -MF CMakeFiles/OpenGLProject.dir/src/TestCubeMap.cpp.o.d -o CMakeFiles/OpenGLProject.dir/src/TestCubeMap.cpp.o -c /Users/raviraj_uppal/Projects/OpenGL/src/TestCubeMap.cpp
 
 CMakeFiles/OpenGLProject.dir/src/TestCubeMap.cpp.i: cmake_force
@@ -173,7 +187,7 @@ CMakeFiles/OpenGLProject.dir/src/TestCubeMap.cpp.s: cmake_force
 CMakeFiles/OpenGLProject.dir/src/TestDynamicLight.cpp.o: CMakeFiles/OpenGLProject.dir/flags.make
 CMakeFiles/OpenGLProject.dir/src/TestDynamicLight.cpp.o: /Users/raviraj_uppal/Projects/OpenGL/src/TestDynamicLight.cpp
 CMakeFiles/OpenGLProject.dir/src/TestDynamicLight.cpp.o: CMakeFiles/OpenGLProject.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/OpenGLProject.dir/src/TestDynamicLight.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/OpenGLProject.dir/src/TestDynamicLight.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGLProject.dir/src/TestDynamicLight.cpp.o -MF CMakeFiles/OpenGLProject.dir/src/TestDynamicLight.cpp.o.d -o CMakeFiles/OpenGLProject.dir/src/TestDynamicLight.cpp.o -c /Users/raviraj_uppal/Projects/OpenGL/src/TestDynamicLight.cpp
 
 CMakeFiles/OpenGLProject.dir/src/TestDynamicLight.cpp.i: cmake_force
@@ -187,7 +201,7 @@ CMakeFiles/OpenGLProject.dir/src/TestDynamicLight.cpp.s: cmake_force
 CMakeFiles/OpenGLProject.dir/src/TestInstance.cpp.o: CMakeFiles/OpenGLProject.dir/flags.make
 CMakeFiles/OpenGLProject.dir/src/TestInstance.cpp.o: /Users/raviraj_uppal/Projects/OpenGL/src/TestInstance.cpp
 CMakeFiles/OpenGLProject.dir/src/TestInstance.cpp.o: CMakeFiles/OpenGLProject.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/OpenGLProject.dir/src/TestInstance.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/OpenGLProject.dir/src/TestInstance.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGLProject.dir/src/TestInstance.cpp.o -MF CMakeFiles/OpenGLProject.dir/src/TestInstance.cpp.o.d -o CMakeFiles/OpenGLProject.dir/src/TestInstance.cpp.o -c /Users/raviraj_uppal/Projects/OpenGL/src/TestInstance.cpp
 
 CMakeFiles/OpenGLProject.dir/src/TestInstance.cpp.i: cmake_force
@@ -201,7 +215,7 @@ CMakeFiles/OpenGLProject.dir/src/TestInstance.cpp.s: cmake_force
 CMakeFiles/OpenGLProject.dir/src/TestLight.cpp.o: CMakeFiles/OpenGLProject.dir/flags.make
 CMakeFiles/OpenGLProject.dir/src/TestLight.cpp.o: /Users/raviraj_uppal/Projects/OpenGL/src/TestLight.cpp
 CMakeFiles/OpenGLProject.dir/src/TestLight.cpp.o: CMakeFiles/OpenGLProject.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/OpenGLProject.dir/src/TestLight.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/OpenGLProject.dir/src/TestLight.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGLProject.dir/src/TestLight.cpp.o -MF CMakeFiles/OpenGLProject.dir/src/TestLight.cpp.o.d -o CMakeFiles/OpenGLProject.dir/src/TestLight.cpp.o -c /Users/raviraj_uppal/Projects/OpenGL/src/TestLight.cpp
 
 CMakeFiles/OpenGLProject.dir/src/TestLight.cpp.i: cmake_force
@@ -215,7 +229,7 @@ CMakeFiles/OpenGLProject.dir/src/TestLight.cpp.s: cmake_force
 CMakeFiles/OpenGLProject.dir/src/TestMenu.cpp.o: CMakeFiles/OpenGLProject.dir/flags.make
 CMakeFiles/OpenGLProject.dir/src/TestMenu.cpp.o: /Users/raviraj_uppal/Projects/OpenGL/src/TestMenu.cpp
 CMakeFiles/OpenGLProject.dir/src/TestMenu.cpp.o: CMakeFiles/OpenGLProject.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/OpenGLProject.dir/src/TestMenu.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/OpenGLProject.dir/src/TestMenu.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGLProject.dir/src/TestMenu.cpp.o -MF CMakeFiles/OpenGLProject.dir/src/TestMenu.cpp.o.d -o CMakeFiles/OpenGLProject.dir/src/TestMenu.cpp.o -c /Users/raviraj_uppal/Projects/OpenGL/src/TestMenu.cpp
 
 CMakeFiles/OpenGLProject.dir/src/TestMenu.cpp.i: cmake_force
@@ -229,7 +243,7 @@ CMakeFiles/OpenGLProject.dir/src/TestMenu.cpp.s: cmake_force
 CMakeFiles/OpenGLProject.dir/src/TestModel.cpp.o: CMakeFiles/OpenGLProject.dir/flags.make
 CMakeFiles/OpenGLProject.dir/src/TestModel.cpp.o: /Users/raviraj_uppal/Projects/OpenGL/src/TestModel.cpp
 CMakeFiles/OpenGLProject.dir/src/TestModel.cpp.o: CMakeFiles/OpenGLProject.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/OpenGLProject.dir/src/TestModel.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/OpenGLProject.dir/src/TestModel.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGLProject.dir/src/TestModel.cpp.o -MF CMakeFiles/OpenGLProject.dir/src/TestModel.cpp.o.d -o CMakeFiles/OpenGLProject.dir/src/TestModel.cpp.o -c /Users/raviraj_uppal/Projects/OpenGL/src/TestModel.cpp
 
 CMakeFiles/OpenGLProject.dir/src/TestModel.cpp.i: cmake_force
@@ -240,10 +254,24 @@ CMakeFiles/OpenGLProject.dir/src/TestModel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OpenGLProject.dir/src/TestModel.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/raviraj_uppal/Projects/OpenGL/src/TestModel.cpp -o CMakeFiles/OpenGLProject.dir/src/TestModel.cpp.s
 
+CMakeFiles/OpenGLProject.dir/src/TestShadow.cpp.o: CMakeFiles/OpenGLProject.dir/flags.make
+CMakeFiles/OpenGLProject.dir/src/TestShadow.cpp.o: /Users/raviraj_uppal/Projects/OpenGL/src/TestShadow.cpp
+CMakeFiles/OpenGLProject.dir/src/TestShadow.cpp.o: CMakeFiles/OpenGLProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/OpenGLProject.dir/src/TestShadow.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGLProject.dir/src/TestShadow.cpp.o -MF CMakeFiles/OpenGLProject.dir/src/TestShadow.cpp.o.d -o CMakeFiles/OpenGLProject.dir/src/TestShadow.cpp.o -c /Users/raviraj_uppal/Projects/OpenGL/src/TestShadow.cpp
+
+CMakeFiles/OpenGLProject.dir/src/TestShadow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/OpenGLProject.dir/src/TestShadow.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/raviraj_uppal/Projects/OpenGL/src/TestShadow.cpp > CMakeFiles/OpenGLProject.dir/src/TestShadow.cpp.i
+
+CMakeFiles/OpenGLProject.dir/src/TestShadow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OpenGLProject.dir/src/TestShadow.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/raviraj_uppal/Projects/OpenGL/src/TestShadow.cpp -o CMakeFiles/OpenGLProject.dir/src/TestShadow.cpp.s
+
 CMakeFiles/OpenGLProject.dir/src/Texture.cpp.o: CMakeFiles/OpenGLProject.dir/flags.make
 CMakeFiles/OpenGLProject.dir/src/Texture.cpp.o: /Users/raviraj_uppal/Projects/OpenGL/src/Texture.cpp
 CMakeFiles/OpenGLProject.dir/src/Texture.cpp.o: CMakeFiles/OpenGLProject.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/OpenGLProject.dir/src/Texture.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/OpenGLProject.dir/src/Texture.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGLProject.dir/src/Texture.cpp.o -MF CMakeFiles/OpenGLProject.dir/src/Texture.cpp.o.d -o CMakeFiles/OpenGLProject.dir/src/Texture.cpp.o -c /Users/raviraj_uppal/Projects/OpenGL/src/Texture.cpp
 
 CMakeFiles/OpenGLProject.dir/src/Texture.cpp.i: cmake_force
@@ -257,7 +285,7 @@ CMakeFiles/OpenGLProject.dir/src/Texture.cpp.s: cmake_force
 CMakeFiles/OpenGLProject.dir/src/VAO.cpp.o: CMakeFiles/OpenGLProject.dir/flags.make
 CMakeFiles/OpenGLProject.dir/src/VAO.cpp.o: /Users/raviraj_uppal/Projects/OpenGL/src/VAO.cpp
 CMakeFiles/OpenGLProject.dir/src/VAO.cpp.o: CMakeFiles/OpenGLProject.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/OpenGLProject.dir/src/VAO.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/OpenGLProject.dir/src/VAO.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGLProject.dir/src/VAO.cpp.o -MF CMakeFiles/OpenGLProject.dir/src/VAO.cpp.o.d -o CMakeFiles/OpenGLProject.dir/src/VAO.cpp.o -c /Users/raviraj_uppal/Projects/OpenGL/src/VAO.cpp
 
 CMakeFiles/OpenGLProject.dir/src/VAO.cpp.i: cmake_force
@@ -271,7 +299,7 @@ CMakeFiles/OpenGLProject.dir/src/VAO.cpp.s: cmake_force
 CMakeFiles/OpenGLProject.dir/src/VBO.cpp.o: CMakeFiles/OpenGLProject.dir/flags.make
 CMakeFiles/OpenGLProject.dir/src/VBO.cpp.o: /Users/raviraj_uppal/Projects/OpenGL/src/VBO.cpp
 CMakeFiles/OpenGLProject.dir/src/VBO.cpp.o: CMakeFiles/OpenGLProject.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/OpenGLProject.dir/src/VBO.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/OpenGLProject.dir/src/VBO.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGLProject.dir/src/VBO.cpp.o -MF CMakeFiles/OpenGLProject.dir/src/VBO.cpp.o.d -o CMakeFiles/OpenGLProject.dir/src/VBO.cpp.o -c /Users/raviraj_uppal/Projects/OpenGL/src/VBO.cpp
 
 CMakeFiles/OpenGLProject.dir/src/VBO.cpp.i: cmake_force
@@ -285,7 +313,7 @@ CMakeFiles/OpenGLProject.dir/src/VBO.cpp.s: cmake_force
 CMakeFiles/OpenGLProject.dir/src/main.cpp.o: CMakeFiles/OpenGLProject.dir/flags.make
 CMakeFiles/OpenGLProject.dir/src/main.cpp.o: /Users/raviraj_uppal/Projects/OpenGL/src/main.cpp
 CMakeFiles/OpenGLProject.dir/src/main.cpp.o: CMakeFiles/OpenGLProject.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/OpenGLProject.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/OpenGLProject.dir/src/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGLProject.dir/src/main.cpp.o -MF CMakeFiles/OpenGLProject.dir/src/main.cpp.o.d -o CMakeFiles/OpenGLProject.dir/src/main.cpp.o -c /Users/raviraj_uppal/Projects/OpenGL/src/main.cpp
 
 CMakeFiles/OpenGLProject.dir/src/main.cpp.i: cmake_force
@@ -299,7 +327,7 @@ CMakeFiles/OpenGLProject.dir/src/main.cpp.s: cmake_force
 CMakeFiles/OpenGLProject.dir/src/stb.cpp.o: CMakeFiles/OpenGLProject.dir/flags.make
 CMakeFiles/OpenGLProject.dir/src/stb.cpp.o: /Users/raviraj_uppal/Projects/OpenGL/src/stb.cpp
 CMakeFiles/OpenGLProject.dir/src/stb.cpp.o: CMakeFiles/OpenGLProject.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/OpenGLProject.dir/src/stb.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/OpenGLProject.dir/src/stb.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGLProject.dir/src/stb.cpp.o -MF CMakeFiles/OpenGLProject.dir/src/stb.cpp.o.d -o CMakeFiles/OpenGLProject.dir/src/stb.cpp.o -c /Users/raviraj_uppal/Projects/OpenGL/src/stb.cpp
 
 CMakeFiles/OpenGLProject.dir/src/stb.cpp.i: cmake_force
@@ -313,7 +341,7 @@ CMakeFiles/OpenGLProject.dir/src/stb.cpp.s: cmake_force
 CMakeFiles/OpenGLProject.dir/libs/imgui/imgui.cpp.o: CMakeFiles/OpenGLProject.dir/flags.make
 CMakeFiles/OpenGLProject.dir/libs/imgui/imgui.cpp.o: /Users/raviraj_uppal/Projects/OpenGL/libs/imgui/imgui.cpp
 CMakeFiles/OpenGLProject.dir/libs/imgui/imgui.cpp.o: CMakeFiles/OpenGLProject.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/OpenGLProject.dir/libs/imgui/imgui.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/OpenGLProject.dir/libs/imgui/imgui.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGLProject.dir/libs/imgui/imgui.cpp.o -MF CMakeFiles/OpenGLProject.dir/libs/imgui/imgui.cpp.o.d -o CMakeFiles/OpenGLProject.dir/libs/imgui/imgui.cpp.o -c /Users/raviraj_uppal/Projects/OpenGL/libs/imgui/imgui.cpp
 
 CMakeFiles/OpenGLProject.dir/libs/imgui/imgui.cpp.i: cmake_force
@@ -327,7 +355,7 @@ CMakeFiles/OpenGLProject.dir/libs/imgui/imgui.cpp.s: cmake_force
 CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_demo.cpp.o: CMakeFiles/OpenGLProject.dir/flags.make
 CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_demo.cpp.o: /Users/raviraj_uppal/Projects/OpenGL/libs/imgui/imgui_demo.cpp
 CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_demo.cpp.o: CMakeFiles/OpenGLProject.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_demo.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_demo.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_demo.cpp.o -MF CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_demo.cpp.o.d -o CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_demo.cpp.o -c /Users/raviraj_uppal/Projects/OpenGL/libs/imgui/imgui_demo.cpp
 
 CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_demo.cpp.i: cmake_force
@@ -341,7 +369,7 @@ CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_demo.cpp.s: cmake_force
 CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_draw.cpp.o: CMakeFiles/OpenGLProject.dir/flags.make
 CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_draw.cpp.o: /Users/raviraj_uppal/Projects/OpenGL/libs/imgui/imgui_draw.cpp
 CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_draw.cpp.o: CMakeFiles/OpenGLProject.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_draw.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_draw.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_draw.cpp.o -MF CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_draw.cpp.o.d -o CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_draw.cpp.o -c /Users/raviraj_uppal/Projects/OpenGL/libs/imgui/imgui_draw.cpp
 
 CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_draw.cpp.i: cmake_force
@@ -355,7 +383,7 @@ CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_draw.cpp.s: cmake_force
 CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_impl_glfw.cpp.o: CMakeFiles/OpenGLProject.dir/flags.make
 CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_impl_glfw.cpp.o: /Users/raviraj_uppal/Projects/OpenGL/libs/imgui/imgui_impl_glfw.cpp
 CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_impl_glfw.cpp.o: CMakeFiles/OpenGLProject.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_impl_glfw.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_impl_glfw.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_impl_glfw.cpp.o -MF CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_impl_glfw.cpp.o.d -o CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_impl_glfw.cpp.o -c /Users/raviraj_uppal/Projects/OpenGL/libs/imgui/imgui_impl_glfw.cpp
 
 CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_impl_glfw.cpp.i: cmake_force
@@ -369,7 +397,7 @@ CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_impl_glfw.cpp.s: cmake_force
 CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_impl_opengl3.cpp.o: CMakeFiles/OpenGLProject.dir/flags.make
 CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_impl_opengl3.cpp.o: /Users/raviraj_uppal/Projects/OpenGL/libs/imgui/imgui_impl_opengl3.cpp
 CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_impl_opengl3.cpp.o: CMakeFiles/OpenGLProject.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_impl_opengl3.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_impl_opengl3.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_impl_opengl3.cpp.o -MF CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_impl_opengl3.cpp.o.d -o CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_impl_opengl3.cpp.o -c /Users/raviraj_uppal/Projects/OpenGL/libs/imgui/imgui_impl_opengl3.cpp
 
 CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_impl_opengl3.cpp.i: cmake_force
@@ -383,7 +411,7 @@ CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_impl_opengl3.cpp.s: cmake_force
 CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_tables.cpp.o: CMakeFiles/OpenGLProject.dir/flags.make
 CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_tables.cpp.o: /Users/raviraj_uppal/Projects/OpenGL/libs/imgui/imgui_tables.cpp
 CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_tables.cpp.o: CMakeFiles/OpenGLProject.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_tables.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_tables.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_tables.cpp.o -MF CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_tables.cpp.o.d -o CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_tables.cpp.o -c /Users/raviraj_uppal/Projects/OpenGL/libs/imgui/imgui_tables.cpp
 
 CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_tables.cpp.i: cmake_force
@@ -397,7 +425,7 @@ CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_tables.cpp.s: cmake_force
 CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_widgets.cpp.o: CMakeFiles/OpenGLProject.dir/flags.make
 CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_widgets.cpp.o: /Users/raviraj_uppal/Projects/OpenGL/libs/imgui/imgui_widgets.cpp
 CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_widgets.cpp.o: CMakeFiles/OpenGLProject.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_widgets.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_widgets.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_widgets.cpp.o -MF CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_widgets.cpp.o.d -o CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_widgets.cpp.o -c /Users/raviraj_uppal/Projects/OpenGL/libs/imgui/imgui_widgets.cpp
 
 CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_widgets.cpp.i: cmake_force
@@ -411,7 +439,7 @@ CMakeFiles/OpenGLProject.dir/libs/imgui/imgui_widgets.cpp.s: cmake_force
 CMakeFiles/OpenGLProject.dir/libs/glad/src/glad.c.o: CMakeFiles/OpenGLProject.dir/flags.make
 CMakeFiles/OpenGLProject.dir/libs/glad/src/glad.c.o: /Users/raviraj_uppal/Projects/OpenGL/libs/glad/src/glad.c
 CMakeFiles/OpenGLProject.dir/libs/glad/src/glad.c.o: CMakeFiles/OpenGLProject.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/OpenGLProject.dir/libs/glad/src/glad.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/OpenGLProject.dir/libs/glad/src/glad.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/OpenGLProject.dir/libs/glad/src/glad.c.o -MF CMakeFiles/OpenGLProject.dir/libs/glad/src/glad.c.o.d -o CMakeFiles/OpenGLProject.dir/libs/glad/src/glad.c.o -c /Users/raviraj_uppal/Projects/OpenGL/libs/glad/src/glad.c
 
 CMakeFiles/OpenGLProject.dir/libs/glad/src/glad.c.i: cmake_force
@@ -426,6 +454,7 @@ CMakeFiles/OpenGLProject.dir/libs/glad/src/glad.c.s: cmake_force
 OpenGLProject_OBJECTS = \
 "CMakeFiles/OpenGLProject.dir/src/Camera.cpp.o" \
 "CMakeFiles/OpenGLProject.dir/src/EBO.cpp.o" \
+"CMakeFiles/OpenGLProject.dir/src/Light.cpp.o" \
 "CMakeFiles/OpenGLProject.dir/src/Mesh.cpp.o" \
 "CMakeFiles/OpenGLProject.dir/src/Model.cpp.o" \
 "CMakeFiles/OpenGLProject.dir/src/ShaderClass.cpp.o" \
@@ -436,6 +465,7 @@ OpenGLProject_OBJECTS = \
 "CMakeFiles/OpenGLProject.dir/src/TestLight.cpp.o" \
 "CMakeFiles/OpenGLProject.dir/src/TestMenu.cpp.o" \
 "CMakeFiles/OpenGLProject.dir/src/TestModel.cpp.o" \
+"CMakeFiles/OpenGLProject.dir/src/TestShadow.cpp.o" \
 "CMakeFiles/OpenGLProject.dir/src/Texture.cpp.o" \
 "CMakeFiles/OpenGLProject.dir/src/VAO.cpp.o" \
 "CMakeFiles/OpenGLProject.dir/src/VBO.cpp.o" \
@@ -455,6 +485,7 @@ OpenGLProject_EXTERNAL_OBJECTS =
 
 bin/OpenGLProject: CMakeFiles/OpenGLProject.dir/src/Camera.cpp.o
 bin/OpenGLProject: CMakeFiles/OpenGLProject.dir/src/EBO.cpp.o
+bin/OpenGLProject: CMakeFiles/OpenGLProject.dir/src/Light.cpp.o
 bin/OpenGLProject: CMakeFiles/OpenGLProject.dir/src/Mesh.cpp.o
 bin/OpenGLProject: CMakeFiles/OpenGLProject.dir/src/Model.cpp.o
 bin/OpenGLProject: CMakeFiles/OpenGLProject.dir/src/ShaderClass.cpp.o
@@ -465,6 +496,7 @@ bin/OpenGLProject: CMakeFiles/OpenGLProject.dir/src/TestInstance.cpp.o
 bin/OpenGLProject: CMakeFiles/OpenGLProject.dir/src/TestLight.cpp.o
 bin/OpenGLProject: CMakeFiles/OpenGLProject.dir/src/TestMenu.cpp.o
 bin/OpenGLProject: CMakeFiles/OpenGLProject.dir/src/TestModel.cpp.o
+bin/OpenGLProject: CMakeFiles/OpenGLProject.dir/src/TestShadow.cpp.o
 bin/OpenGLProject: CMakeFiles/OpenGLProject.dir/src/Texture.cpp.o
 bin/OpenGLProject: CMakeFiles/OpenGLProject.dir/src/VAO.cpp.o
 bin/OpenGLProject: CMakeFiles/OpenGLProject.dir/src/VBO.cpp.o
@@ -481,7 +513,7 @@ bin/OpenGLProject: CMakeFiles/OpenGLProject.dir/libs/glad/src/glad.c.o
 bin/OpenGLProject: CMakeFiles/OpenGLProject.dir/build.make
 bin/OpenGLProject: /opt/homebrew/lib/libglfw.dylib
 bin/OpenGLProject: CMakeFiles/OpenGLProject.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking CXX executable bin/OpenGLProject"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/raviraj_uppal/Projects/OpenGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Linking CXX executable bin/OpenGLProject"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/OpenGLProject.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

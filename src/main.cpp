@@ -18,6 +18,7 @@
 #include "TestModel.h"
 #include "TestCubeMap.h"
 #include "TestInstance.h"
+#include "TestShadow.h"
 
 
 // Vertex vertices[] =
@@ -58,6 +59,18 @@
 // 		1, 5, 4,
 // 		1, 4, 0};
 
+void GLClearError()
+{
+    while(glGetError());
+}
+
+void GLCheckError()
+{
+    while(GLenum error = glGetError())
+    {
+        std::cout << "error : " << error << std::endl;
+    }
+}
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
 	glViewport(0, 0, width, height);
@@ -163,6 +176,7 @@ int main()
 	testMenu->Register<TestModel>("Model");
 	testMenu->Register<TestCubeMap>("SkyBox");
 	testMenu->Register<TestInstance>("Instances");
+	testMenu->Register<TestShadow>("Shadow");
 
 
 	glfwSetWindowUserPointer(window, &currentTest);

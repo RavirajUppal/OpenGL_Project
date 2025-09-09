@@ -6,6 +6,7 @@ layout (location = 3) in vec2 aTex;
 
 uniform mat4 model;
 uniform mat4 cameraMatrix;
+uniform mat4 lightSpaceMatrix;
 
 uniform mat4 translation;
 uniform mat4 rotation;
@@ -17,6 +18,7 @@ out DATA {
     vec3 normal;
     vec3 color;
     vec2 texCoord;
+	vec4 fragPosLightSpace;
     mat4 projection;
 } data_out;
 #else
@@ -24,30 +26,29 @@ out vec3 currPos;
 out vec3 normal;
 out vec3 color;
 out vec2 texCoord;
+out vec4 fragPosLightSpace;
 #endif
 
 void main()
 {
-	//currPos = vec3(model * translation * rotation * scale * vec4(aPos, 1.0f));
-	//normal = aNormal;
-	//color = aColor;
-	////texCoord = mat2(0.0, -1.0, 1.0, 0.0) * aTex;
-	//texCoord = aTex;
-	
-	//gl_Position = cameraMatrix * vec4(currPos, 1.0f);
+////texCoord = mat2(0.0, -1.0, 1.0, 0.0) * aTex;
 
 #ifdef USE_GEOMETRY
-	data_out.currPos = vec3(model * translation * rotation * scale * vec4(aPos, 1.0f));
-	data_out.normal = aNormal;
+	mat4 finalModel = model * translation * rotation * scale;
+	data_out.currPos = vec3(finalModel * vec4(aPos, 1.0f));
+	data_out.normal = mat3(transpose(inverse(finalModel))) * aNormal;
 	data_out.color = aColor;
 	data_out.texCoord = aTex;
 	data_out.projection = cameraMatrix;
-	gl_Position = model * translation * rotation * scale * vec4(aPos, 1.0f);
+	data_out.fragPosLightSpace = lightSpaceMatrix * vec4(data_out.currPos, 1.0f);
+	gl_Position = finalModel * vec4(aPos, 1.0f);
 #else
-	currPos = vec3(model * translation * rotation * scale * vec4(aPos, 1.0f));
-	normal = aNormal;
+	mat4 finalModel = model * translation * rotation * scale;
+	currPos = vec3(finalModel * vec4(aPos, 1.0f));
+	normal = mat3(transpose(inverse(finalModel))) * aNormal;
 	color = aColor;
 	texCoord = aTex;
-	gl_Position = cameraMatrix * vec4(currPos, 1.0f);
+	fragPosLightSpace = lightSpaceMatrix * vec4(currPos, 1.0f);
+	gl_Position = cameraMatrix * finalModel * vec4(aPos, 1.0f);
 #endif
 }

@@ -1166,6 +1166,7 @@ CMakeFiles/OpenGLProject.dir/src/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/sstream \
   /Users/raviraj_uppal/Projects/OpenGL/headerFiles/Texture.h \
   /Users/raviraj_uppal/Projects/OpenGL/libs/stb/stb_image.h \
+  /Users/raviraj_uppal/Projects/OpenGL/headerFiles/Light.h \
   /Users/raviraj_uppal/Projects/OpenGL/headerFiles/TestMenu.h \
   /Users/raviraj_uppal/Projects/OpenGL/headerFiles/TestLight.h \
   /Users/raviraj_uppal/Projects/OpenGL/headerFiles/TestDynamicLight.h \
@@ -1193,4 +1194,5 @@ CMakeFiles/OpenGLProject.dir/src/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/valarray \
   /Users/raviraj_uppal/Projects/OpenGL/headerFiles/TestCubeMap.h \
-  /Users/raviraj_uppal/Projects/OpenGL/headerFiles/TestInstance.h
+  /Users/raviraj_uppal/Projects/OpenGL/headerFiles/TestInstance.h \
+  /Users/raviraj_uppal/Projects/OpenGL/headerFiles/TestShadow.h

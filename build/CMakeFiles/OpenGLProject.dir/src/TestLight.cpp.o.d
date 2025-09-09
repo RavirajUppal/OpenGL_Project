@@ -1162,5 +1162,6 @@ CMakeFiles/OpenGLProject.dir/src/TestLight.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /Users/raviraj_uppal/Projects/OpenGL/headerFiles/Texture.h \
   /Users/raviraj_uppal/Projects/OpenGL/libs/stb/stb_image.h \
+  /Users/raviraj_uppal/Projects/OpenGL/headerFiles/Light.h \
   /Users/raviraj_uppal/Projects/OpenGL/libs/imgui/imgui.h \
   /Users/raviraj_uppal/Projects/OpenGL/libs/imgui/imconfig.h

@@ -1,6 +1,6 @@
 #include "Mesh.h"
 
-Mesh::Mesh(std::vector<Vertex>& vertices, std::vector<GLuint>& indices, std::vector<Texture>& textures, unsigned int instanceCount, std::vector<glm::mat4> instanceMatrices)
+Mesh::Mesh(std::vector<Vertex>& vertices, std::vector<GLuint>& indices, const std::vector<Texture>& textures, unsigned int instanceCount, std::vector<glm::mat4> instanceMatrices)
 {
     this->vertices = vertices;
     this->indices = indices;

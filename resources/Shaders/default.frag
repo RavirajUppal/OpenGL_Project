@@ -5,13 +5,45 @@ in vec3 currPos;
 in vec3 normal;
 in vec3 color;
 in vec2 texCoord;
+in vec4 fragPosLightSpace;
 
 uniform sampler2D diffuse0;
 uniform sampler2D specular0;
+uniform sampler2D shadowMap;
+
 uniform vec4 lightColor;
 uniform vec3 lightPos;
 uniform vec3 CameraPos;
 uniform int lightMode;
+
+float ShadowCalculation(vec4 fragPosLight, vec3 normal, vec3 lightDirection)
+{
+	float shadow = 0.0f;
+	vec3 lightCoords = fragPosLight.xyz / fragPosLight.w;
+	if(lightCoords.z <= 1.0f)
+	{
+		lightCoords = lightCoords * 0.5 + 0.5;
+		float currentDepth = lightCoords.z;
+		float bias = max(0.025f * (1.0f - dot(normal, lightDirection)), 0.0005f);
+
+		// Smoothens out the shadows
+		int sampleRadius = 2;
+		vec2 pixelSize = 1.0 / textureSize(shadowMap, 0);
+		for(int y = -sampleRadius; y <= sampleRadius; y++)
+		{
+		    for(int x = -sampleRadius; x <= sampleRadius; x++)
+		    {
+		        float closestDepth = texture(shadowMap, lightCoords.xy + vec2(x, y) * pixelSize).r;
+				if (currentDepth > closestDepth + bias)
+					shadow += 1.0f;     
+		    }    
+		}
+		// Get average shadow
+		shadow /= pow((sampleRadius * 2 + 1), 2);
+	}
+
+    return shadow;
+} 
 
 vec4 DirectionalLight()
 {
@@ -20,13 +52,19 @@ vec4 DirectionalLight()
   vec3 lightDirection = normalize(vec3(1.0f, 1.0f, 0.0f));
   float diffuse = max(dot(lightDirection, Normal), 0.0f);
 
-  float specularLight = 0.5f;
-  vec3 viewDirection = normalize(CameraPos - currPos);
-  vec3 reflectionDirection = reflect(-lightDirection, Normal);
-  float specAmount = pow(max(dot(reflectionDirection, viewDirection), 0.0f), 12);
-  float specular = specAmount * specularLight;
+  float specular = 0.0f;
+  if (diffuse != 0.0f)
+  {
+  	float specularLight = 0.5f;
+  	vec3 viewDirection = normalize(CameraPos - currPos);
+  	vec3 reflectionDirection = reflect(-lightDirection, Normal);
+  	float specAmount = pow(max(dot(reflectionDirection, viewDirection), 0.0f), 12);
+  	specular = specAmount * specularLight;
+  }
 
-  return (texture(diffuse0, texCoord)  * (diffuse + ambient) + texture(specular0, texCoord).r  * specular) * lightColor ;
+  float shadow = ShadowCalculation(fragPosLightSpace, Normal, lightDirection);
+
+  return (texture(diffuse0, texCoord)  * (diffuse * (1.0f - shadow) + ambient) + texture(specular0, texCoord).r  * specular * (1.0f - shadow)) * lightColor ;
 }
 
 vec4 PointLight()
@@ -34,8 +72,8 @@ vec4 PointLight()
   vec3 lightVec = lightPos - currPos;
   float dist = length(lightVec);
   float a = 0.1f;
-  float b = 0.7f;
-  float inten = 1.0f/(a * dist * dist + b * dist + 1.0f);
+  float b = 0.3f;
+  float inten = 3.0f/(a * dist * dist + b * dist + 1.0f);
   float ambient = 0.2f;
   vec3 Normal = normalize(normal);
   vec3 lightDirection = normalize(lightVec);
@@ -53,10 +91,12 @@ vec4 PointLight()
       specular = specAmount * specularLight;
   }
 
-  return (texture(diffuse0, texCoord)  * (diffuse * inten + ambient) + texture(specular0, texCoord).r  * specular * inten) * lightColor ;
+  float shadow = ShadowCalculation(fragPosLightSpace, Normal, lightDirection);
+	
+  return (texture(diffuse0, texCoord)  * (diffuse * (1.0f - shadow) * inten + ambient) + texture(specular0, texCoord).r  * specular * (1.0f - shadow) * inten) * lightColor ;
 }
 
-vec4 spotLight()
+vec4 SpotLight()
 {
 	// controls how big the area that is lit up is
 	float outerCone = 0.90f;
@@ -81,18 +121,20 @@ vec4 spotLight()
 	float angle = dot(vec3(0.0f, -1.0f, 0.0f), -lightDirection);
 	float inten = clamp((angle - outerCone) / (innerCone - outerCone), 0.0f, 1.0f);
 
-	return (texture(diffuse0, texCoord) * (diffuse * inten + ambient) + texture(specular0, texCoord).r * specular * inten) * lightColor;
+  	float shadow = ShadowCalculation(fragPosLightSpace, Normal, lightDirection);
+
+	return (texture(diffuse0, texCoord) * (diffuse * (1.0f - shadow) * inten + ambient) + texture(specular0, texCoord).r * specular * (1.0f - shadow) * inten) * lightColor;
 }
 
 vec4 SelectLightMode()
 {
-  if (lightMode == 0)
-  {
-    return spotLight();
-  }
-  else if (lightMode == 1)
+  if (lightMode == 1)
   {
     return PointLight();
+  }
+  else if (lightMode == 2)
+  {
+    return SpotLight();
   }
   else
   {

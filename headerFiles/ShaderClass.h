@@ -7,6 +7,7 @@
 #include<sstream>
 #include<iostream>
 #include<cerrno>
+#include<glm/glm.hpp>
 
 std::string get_file_contents(const char* filename);
 
@@ -19,6 +20,14 @@ public:
 	GLuint CompileShader(GLuint type, const char* source);
 	void Activate();
 	void Delete();
+	void SetVec3(const std::string& name, const glm::vec3& value) const;
+	void SetFloat4(const std::string& name, float x, float y, float z, float w) const;
+	void SetFloat3(const std::string& name, float x, float y, float z) const;
+	void SetFloat1(const std::string& name, float x) const;
+	void SetInt1(const std::string& name, int x) const;
+	void SetMat4(const std::string &name, const float *matrix) const;
+	void PrintActiveUniforms() const;
+
 private:
 	void compileErrors(unsigned int shader, const char* type);
 };

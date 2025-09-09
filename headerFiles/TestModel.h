@@ -22,7 +22,7 @@ private:
     std::unique_ptr<Shader> m_OutliningShader;
     std::unique_ptr<Shader> m_NormalsShader;
     std::unique_ptr<Camera> m_Camera;
-    std::unique_ptr<Mesh> m_Light;
+    // std::unique_ptr<Mesh> m_Light;
     bool m_ShowOutline = false;
     void DrawModel();
 };

@@ -369,6 +369,30 @@ src/EBO.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/EBO.cpp.s
 .PHONY : src/EBO.cpp.s
 
+src/Light.o: src/Light.cpp.o
+.PHONY : src/Light.o
+
+# target to build an object file
+src/Light.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/Light.cpp.o
+.PHONY : src/Light.cpp.o
+
+src/Light.i: src/Light.cpp.i
+.PHONY : src/Light.i
+
+# target to preprocess a source file
+src/Light.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/Light.cpp.i
+.PHONY : src/Light.cpp.i
+
+src/Light.s: src/Light.cpp.s
+.PHONY : src/Light.s
+
+# target to generate assembly for a file
+src/Light.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/Light.cpp.s
+.PHONY : src/Light.cpp.s
+
 src/Mesh.o: src/Mesh.cpp.o
 .PHONY : src/Mesh.o
 
@@ -609,6 +633,30 @@ src/TestModel.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/TestModel.cpp.s
 .PHONY : src/TestModel.cpp.s
 
+src/TestShadow.o: src/TestShadow.cpp.o
+.PHONY : src/TestShadow.o
+
+# target to build an object file
+src/TestShadow.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/TestShadow.cpp.o
+.PHONY : src/TestShadow.cpp.o
+
+src/TestShadow.i: src/TestShadow.cpp.i
+.PHONY : src/TestShadow.i
+
+# target to preprocess a source file
+src/TestShadow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/TestShadow.cpp.i
+.PHONY : src/TestShadow.cpp.i
+
+src/TestShadow.s: src/TestShadow.cpp.s
+.PHONY : src/TestShadow.s
+
+# target to generate assembly for a file
+src/TestShadow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/TestShadow.cpp.s
+.PHONY : src/TestShadow.cpp.s
+
 src/Texture.o: src/Texture.cpp.o
 .PHONY : src/Texture.o
 
@@ -768,6 +816,9 @@ help:
 	@echo "... src/EBO.o"
 	@echo "... src/EBO.i"
 	@echo "... src/EBO.s"
+	@echo "... src/Light.o"
+	@echo "... src/Light.i"
+	@echo "... src/Light.s"
 	@echo "... src/Mesh.o"
 	@echo "... src/Mesh.i"
 	@echo "... src/Mesh.s"
@@ -798,6 +849,9 @@ help:
 	@echo "... src/TestModel.o"
 	@echo "... src/TestModel.i"
 	@echo "... src/TestModel.s"
+	@echo "... src/TestShadow.o"
+	@echo "... src/TestShadow.i"
+	@echo "... src/TestShadow.s"
 	@echo "... src/Texture.o"
 	@echo "... src/Texture.i"
 	@echo "... src/Texture.s"

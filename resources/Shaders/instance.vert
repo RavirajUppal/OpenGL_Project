@@ -26,14 +26,14 @@ void main()
 {
 #ifdef USE_GEOMETRY
 	data_out.currPos = vec3(aInstanceMatrix * vec4(aPos, 1.0f));
-	data_out.normal = aNormal;
+	data_out.normal = mat3(transpose(inverse(aInstanceMatrix))) * aNormal;
 	data_out.color = aColor;
 	data_out.texCoord = aTex;
 	data_out.projection = cameraMatrix;
 	gl_Position = aInstanceMatrix * vec4(aPos, 1.0f);
 #else
 	currPos = vec3(aInstanceMatrix * vec4(aPos, 1.0f));
-	normal = aNormal;
+	normal = mat3(transpose(inverse(aInstanceMatrix))) * aNormal;
 	color = aColor;
 	texCoord = aTex;
 	gl_Position = cameraMatrix * vec4(currPos, 1.0f);

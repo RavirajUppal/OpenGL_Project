@@ -16,7 +16,7 @@ public:
     std::vector<glm::mat4> instanceMatrices;
     VAO VAO;
 
-    Mesh(std::vector<Vertex>& vertices, std::vector<GLuint>& indices, std::vector<Texture>& textures, unsigned int instanceCount = 1, std::vector<glm::mat4> instanceMatrices = {});
+    Mesh(std::vector<Vertex>& vertices, std::vector<GLuint>& indices, const std::vector<Texture>& textures = {}, unsigned int instanceCount = 1, std::vector<glm::mat4> instanceMatrices = {});
     void TexSlot(Shader &shader);
     void Draw
 	(

@@ -112,3 +112,109 @@ void Shader::compileErrors(unsigned int shader, const char *type)
 		}
 	}
 }
+
+void Shader::SetVec3(const std::string &name, const glm::vec3 &value) const
+{
+	GLint loc = glGetUniformLocation(ID, name.c_str());
+	if (loc != -1)
+	{
+		glUniform3fv(loc, 1, &value[0]);
+	}
+	else
+	{
+		std::cerr << "Warning: uniform '" << name << "' not found.\n";
+	}
+}
+
+// Overload for individual floats
+void Shader::SetFloat4(const std::string &name, float x, float y, float z, float w) const
+{
+	GLint loc = glGetUniformLocation(ID, name.c_str());
+	if (loc != -1)
+	{
+		glUniform4f(loc, x, y, z, w);
+	}
+	else
+	{
+		std::cerr << "Warning: uniform '" << name << "' not found.\n";
+	}
+}
+
+void Shader::SetFloat3(const std::string &name, float x, float y, float z) const
+{
+	GLint loc = glGetUniformLocation(ID, name.c_str());
+	if (loc != -1)
+	{
+		glUniform3f(loc, x, y, z);
+	}
+	else
+	{
+		std::cerr << "Warning: uniform '" << name << "' not found.\n";
+	}
+}
+
+void Shader::SetFloat1(const std::string &name, float x) const
+{
+	GLint loc = glGetUniformLocation(ID, name.c_str());
+	if (loc != -1)
+	{
+		glUniform1f(loc, x);
+	}
+	else
+	{
+		std::cerr << "Warning: uniform '" << name << "' not found.\n";
+	}
+}
+
+void Shader::SetInt1(const std::string &name, int x) const
+{
+	GLint loc = glGetUniformLocation(ID, name.c_str());
+	if (loc != -1)
+	{
+		glUniform1i(loc, x);
+	}
+	else
+	{
+		std::cerr << "Warning: uniform '" << name << "' not found.\n";
+	}
+}
+
+void Shader::SetMat4(const std::string &name, const float *matrix) const
+{
+    GLint loc = glGetUniformLocation(ID, name.c_str());
+    if (loc != -1)
+    {
+        // Upload 4x4 matrix, no transpose (OpenGL expects column-major order)
+        glUniformMatrix4fv(loc, 1, GL_FALSE, matrix);
+    }
+    else
+    {
+        std::cerr << "Warning: uniform '" << name << "' not found.\n";
+    }
+}
+
+void Shader::PrintActiveUniforms() const
+{
+    GLint count;
+    glGetProgramiv(ID, GL_ACTIVE_UNIFORMS, &count);
+
+    std::cout << "Active uniforms in shader " << ID << ":\n";
+    for (GLint i = 0; i < count; ++i)
+    {
+        char name[256];
+        GLsizei length;
+        GLint size;
+        GLenum type;
+
+        glGetActiveUniform(ID, (GLuint)i, sizeof(name), &length, &size, &type, name);
+
+        GLint location = glGetUniformLocation(ID, name);
+
+        std::cout << "  #" << i
+                  << " name=" << name
+                  << " location=" << location
+                  << " type=" << type
+                  << " size=" << size
+                  << "\n";
+    }
+}
